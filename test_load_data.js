@@ -49,27 +49,32 @@ var appCollections = [
             {
                 "user_id": 1,
                 "game_id": 1,
-                "team_id": 1
+                "team_id": 1,
+                "isCorrect": null
             },
             {
                 "user_id": 1,
                 "game_id": 2,
-                "team_id": 3
+                "team_id": 3,
+                "isCorrect": null
             },
             {
                 "user_id": 2,
                 "game_id": 1,
-                "team_id": 2
+                "team_id": 2,
+                "isCorrect": null
             },
             {
                 "user_id": 2,
                 "game_id": 2,
-                "team_id": 4
+                "team_id": 4,
+                "isCorrect": null
             },
             {
                 "user_id": 3,
                 "game_id": 2,
-                "team_id": 4
+                "team_id": 4,
+                "isCorrect": null
             }
         ]
     },
@@ -83,8 +88,10 @@ var appCollections = [
                 "home_team_id": 1,
                 "away_team_id": 2,
                 "game_date": new Date('Aug 31, 2013'),
-                "line": -3,
-                "winning_team_id": null
+                "spread": -3,
+                "wasSpreadCovered": null,
+                "home_team_score": 0,
+                "away_team_score": 0
             },
             {
                 "game_id": 2,
@@ -92,8 +99,10 @@ var appCollections = [
                 "home_team_id": 3,
                 "away_team_id": 4,
                 "game_date": new Date('Aug 30, 2013'),
-                "line": 7,
-                "winning_team_id": null
+                "spread": 7,
+                "wasSpreadCovered": null,
+                "home_team_score": 0,
+                "away_team_score": 0
             }
         ]
     },
@@ -147,31 +156,31 @@ var appCollections = [
                 "week_id": 1,
                 "start_date": new Date("Aug 25, 2013"),
                 "end_date": new Date("Aug 31, 2013"),
-                "closed": false
+                "active": true
             },
             {
                 "week_id": 2,
                 "start_date": new Date("Sept 1, 2013"),
                 "end_date": new Date("Sept 7, 2013"),
-                "closed": false
+                "active": false
             },
             {
                 "week_id": 3,
                 "start_date": new Date("Sept 8, 2013"),
                 "end_date": new Date("Sept 14, 2013"),
-                "closed": false
+                "active": false
             },
             {
                 "week_id": 4,
                 "start_date": new Date("Sept 15, 2013"),
                 "end_date": new Date("Sept 21, 2013"),
-                "closed": false
+                "active": false
             },
             {
                 "week_id": 5,
                 "start_date": new Date("Sept 22, 2013"),
                 "end_date": new Date("Sept 28, 2013"),
-                "closed": false
+                "active": false
             }
         ]
     }
