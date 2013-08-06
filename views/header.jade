@@ -8,10 +8,10 @@ div.navbar.navbar-inverse.navbar-fixed-top
             a.brand(href="#")
                 | College Football Picks
             div.nav-collapse.collapse
-                ul.nav
-                    li.active
-                        a(href="#") BigBoard
+                ul.nav#tabs(data-tabs="tabs")
                     li
-                        a(href="#about") MyPicks
+                        a(href="#bigboard", data-toggle="tab") BigBoard
                     li
-                        a(href="#contact") Contact
+                        a(href="#mypicks", data-toggle="tab") MyPicks
+                    li
+                        a(href="#contact", data-toggle="tab") Contact
