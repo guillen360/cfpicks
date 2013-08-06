@@ -81,6 +81,8 @@ app.get('/teams/:team_id', teams.findByID);
 
 // default:
 app.get('/', routes.index);
+app.get('/ajax_bigboard',routes.ajax_bigboard);
+app.get('/ajax_mypicks', routes.ajax_mypicks)
 
 
 http.createServer(app).listen(app.get('port'), function(){
