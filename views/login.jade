@@ -1,0 +1,60 @@
+!!!
+html(lang='en')
+    head
+        block head
+            block title
+                title CFPicks
+            block meta
+                meta(name='description', content='')
+                meta(name='keywords', content='')
+                meta(name="viewport", content="width=device-width, initial-scale=1.0")
+            link(rel='stylesheet', href='/css/bootstrap.min.css', media="screen")
+            | <style>
+            | body { padding-top: 60px; }
+            | </style>
+            script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js')
+            link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')
+            link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css')
+            link(rel='stylesheet', href='/css/social-buttons.css')
+            link(rel='stylesheet', href='/css/style.css')
+            script(src='/js/lib/bootstrap.min.js')
+
+      body
+
+          block header
+            div.navbar.navbar-inverse.navbar-fixed-top
+                div.navbar-inner
+                    div.container
+                        a.btn.btn-navbar(data-toggle="collapse", data-target=".nav-collapse")
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                        a.brand(href="#index")
+                            | College Football Picks
+                        div.nav-collapse.collapse
+                            ul.nav#tabs(data-tabs="tabs")
+                                li
+                                    a(href="#login") login
+                                li
+                                    a(href="#register") register
+                                li
+                                    a(href="#contact") contact
+
+          block content
+            div.container
+                div.span6
+                    div.row
+                        p.text-info Login with your favorite social network...
+                    div.span2
+
+                    div.span4
+                        a.btn.btn-large.btn-block.btn-facebook(href="auth/facebook")
+                            i.icon-facebook  | Connect with Facebook
+                        a.btn.btn-large.btn-block.btn-twitter(href="auth/twitter")
+                            i.icon-twitter  | Connect with Twitter
+                        a.btn.btn-large.btn-block.btn-google-plus(href="auth/google")
+                            i.icon-google-plus  | Connect with Google+
+                        a.btn.btn-large.btn-block.btn-linkedin(href="auth/linkedin")
+                            i.icon-linkedin  | Connect with LinkedIn
+            block footer
+              include footer                                

@@ -1,12 +1,23 @@
-exports.index = function(req, res){
-    res.render('index', {test:'Kyle'});
+exports.base = function(req, res){
+    // renders with partial of 'index' by default...
+    res.render('base');
 };
 
-exports.ajax_bigboard = function(req, res){
-    // res.json({test:'this is an ajax test'});
-    res.render('bigboard');
-};
 
-exports.ajax_mypicks = function(req, res){
-    res.json({test:'this is another test'});
-};
+// partials:
+exports.index = function (req, res) {
+    res.render('partials/index');
+}
+
+exports.bigboard = function (req, res) {
+    res.render('partials/bigboard');
+}
+
+exports.mypicks = function (req, res) {
+    res.render('partials/mypicks');
+}
+
+exports.contact = function (req, res) {
+    res.render('partials/contact');
+}
+

@@ -25,93 +25,93 @@ var mongourl = require('./app').mongourl;
 
 var appCollections = [
     {
-        "name": "Users",
+        "name": "users",
         "data":
             [
                 {
-                    "user_id": 1,
+                    "id": "1",
                     "user_name": "test001"
                 },
                 {
-                    "user_id": 2,
+                    "id": "2",
                     "user_name": "test002"
                 },
                 {
-                    "user_id": 3,
+                    "id": "3",
                     "user_name": "test003"
                 }
             ]
     },
     {
-        "name": "Picks",
+        "name": "picks",
         "data":
         [
             {
-                "user_id": 1,
-                "game_id": 1,
-                "team_id": 1,
+                "user_id": "1",
+                "game_id": "1",
+                "team_id": "1",
                 "isCorrect": null
             },
             {
-                "user_id": 1,
-                "game_id": 2,
-                "team_id": 3,
+                "user_id": "1",
+                "game_id": "2",
+                "team_id": "3",
                 "isCorrect": null
             },
             {
-                "user_id": 2,
-                "game_id": 1,
-                "team_id": 2,
+                "user_id": "2",
+                "game_id": "1",
+                "team_id": "2",
                 "isCorrect": null
             },
             {
-                "user_id": 2,
-                "game_id": 2,
-                "team_id": 4,
+                "user_id": "2",
+                "game_id": "2",
+                "team_id": "4",
                 "isCorrect": null
             },
             {
-                "user_id": 3,
-                "game_id": 2,
-                "team_id": 4,
+                "user_id": "3",
+                "game_id": "2",
+                "team_id": "4",
                 "isCorrect": null
             }
         ]
     },
     {
-        "name": "Games",
+        "name": "games",
         "data":
         [
             {
-                "game_id": 1,
-                "week_id": 1,
-                "home_team_id": 1,
-                "away_team_id": 2,
+                "id": "1",
+                "week_id": "1",
+                "home_team_id": "1",
+                "away_team_id": "2",
                 "game_date": new Date('Aug 31, 2013'),
                 "spread": -3,
                 "wasSpreadCovered": null,
-                "home_team_score": 0,
-                "away_team_score": 0
+                "home_team_score": "0",
+                "away_team_score": "0"
             },
             {
-                "game_id": 2,
-                "week_id": 1,
-                "home_team_id": 3,
-                "away_team_id": 4,
+                "id": "2",
+                "week_id": "1",
+                "home_team_id": "3",
+                "away_team_id": "4",
                 "game_date": new Date('Aug 30, 2013'),
                 "spread": 7,
                 "wasSpreadCovered": null,
-                "home_team_score": 0,
-                "away_team_score": 0
+                "home_team_score": "0",
+                "away_team_score": "0"
             }
         ]
     },
     {
-        "name": "Teams",
+        "name": "teams",
         "data":
         [
             {
-                "team_id": 1,
+                "id": "1",
                 "college": "University of Texas at Austin",
                 "abbreviation": "UT",
                 "city": "Austin",
@@ -120,7 +120,7 @@ var appCollections = [
                 "logo": "longhorns.jpg"
             },
             {
-                "team_id": 2,
+                "id": "2",
                 "college": "Texas A&M University",
                 "abbreviation": "TAMU",
                 "city": "College Station",
@@ -129,7 +129,7 @@ var appCollections = [
                 "logo": "aggies.jpg"
             },
             {
-                "team_id": 3,
+                "id": "3",
                 "college": "University of Notre Dame",
                 "abbreviation": "ND",
                 "city": "Notre Dame",
@@ -138,7 +138,7 @@ var appCollections = [
                 "logo": "nd.jpg"
             },
             {
-                "team_id": 4,
+                "id": "4",
                 "college": "University of Oklahoma",
                 "abbreviation": "OK",
                 "city": "Norman",
@@ -149,35 +149,35 @@ var appCollections = [
         ]
     },
     {
-        "name": "Weeks",
+        "name": "weeks",
         "data":
         [
             {
-                "week_id": 1,
+                "id": "1",
                 "start_date": new Date("Aug 25, 2013"),
                 "end_date": new Date("Aug 31, 2013"),
                 "active": true
             },
             {
-                "week_id": 2,
+                "id": "2",
                 "start_date": new Date("Sept 1, 2013"),
                 "end_date": new Date("Sept 7, 2013"),
                 "active": false
             },
             {
-                "week_id": 3,
+                "id": "3",
                 "start_date": new Date("Sept 8, 2013"),
                 "end_date": new Date("Sept 14, 2013"),
                 "active": false
             },
             {
-                "week_id": 4,
+                "id": "4",
                 "start_date": new Date("Sept 15, 2013"),
                 "end_date": new Date("Sept 21, 2013"),
                 "active": false
             },
             {
-                "week_id": 5,
+                "id": "5",
                 "start_date": new Date("Sept 22, 2013"),
                 "end_date": new Date("Sept 28, 2013"),
                 "active": false
