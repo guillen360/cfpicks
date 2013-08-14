@@ -21,7 +21,7 @@
 var mongo = require('mongodb');
 var format = require('util');
 
-var mongourl = require('./app').mongourl;
+var mongourl = require('./server').mongourl;
 
 var appCollections = [
     {
