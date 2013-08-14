@@ -5,16 +5,17 @@ div.navbar.navbar-inverse.navbar-fixed-top
                 span.icon-bar
                 span.icon-bar
                 span.icon-bar
-            a.brand(href="#index")
-                | College Football Picks
+            
             div.nav-collapse.collapse
                 ul.nav#tabs(data-tabs="tabs")
                     li
-                        a(href="#bigboard") BigBoard
+                        a.brand(href="#index", data-toggle="tab", class="active") College Football Picks
                     li
-                        a(href="#mypicks") MyPicks
+                        a(href="#bigboard", data-toggle="tab") BigBoard
                     li
-                        a(href="#contact") Contact
+                        a(href="#mypicks", data-toggle="tab") MyPicks
+                    li
+                        a(href="#contact", data-toggle="tab") Contact
 
             - if (everyauth.loggedIn)
                 a(href="/logout") logout

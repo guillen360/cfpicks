@@ -7,8 +7,8 @@ $(document).ready(function(){
             type:'get',
             url:'/partials/index'
         }).done(function(data){
-                $('#tab_container').html(data);
-            })
+            $('#tab_container').html(data);
+        })
     });
 
     $('a[href="#bigboard"]').on('click',function(){
@@ -16,8 +16,8 @@ $(document).ready(function(){
             type:'get',
             url:'/partials/bigboard'
         }).done(function(data){
-                $('#tab_container').html(data);
-            })
+            $('#tab_container').html(data);
+        })
     });
 
     $('a[href="#mypicks"]').on('click',function(){
@@ -25,8 +25,8 @@ $(document).ready(function(){
             type:'get',
             url:'/partials/mypicks'
         }).done(function(data){
-                $('#tab_container').html(data);
-            })
+            $('#tab_container').html(data);
+        })
     });
 
     $('a[href="#contact"]').on('click',function(){
@@ -34,7 +34,7 @@ $(document).ready(function(){
             type:'get',
             url:'/partials/contact'
         }).done(function(data){
-                $('#tab_container').html(data);
-            })
+            $('#tab_container').html(data);
+        })
     });
 })
