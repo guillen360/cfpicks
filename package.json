@@ -10,6 +10,7 @@
     "jade": "*",
     "stylus": "*",
     "mongodb": "*",
-    "everyauth": "*"
+    "everyauth": "*",
+    "jquery": "*"
   }
 }
