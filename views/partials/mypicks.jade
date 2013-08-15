@@ -1,6 +1,26 @@
 h2 here are my picks
 
-div games = #{games}
-
-    ul
-        li
+div.accordion#accordion
+    - for (var i = 1; i <= 15; i++) {
+        div.accordion-group 
+            div.accordion-heading
+                a(data-toggle="collapse", data-parent="#accordion", href="#collapse_#{weeks[i]['id']}").accordion-toggle Week #{weeks[i]['id']}
+            - if(weeks[i]['active']){
+                div(id="collapse_#{weeks[i]['id']}").accordion-body.collapse.in
+                    div.accordion-inner
+                        ul.nostyle_list
+                            - for (var i = 0; i <= games.length - 1; i++) {
+                                li.row
+                                    span.span3 
+                                        input(type="radio", name="#{games[i]['id']}", value="#{games[i]['home_team_id']}").span1
+                                        | #{games[i]['home_team']['college']}
+                                    span.span1 #{games[i]['spread']}
+                                    span.span3 
+                                        input(type="radio", name="#{games[i]['id']}", value="#{games[i]['away_team_id']}").span1
+                                        | #{games[i]['away_team']['college']}
+                            - };
+            - }else{
+                div(id="collapse_#{weeks[i]['id']}").accordion-body.collapse
+                    div.accordion-inner
+            - }
+    - };

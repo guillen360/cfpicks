@@ -26,6 +26,7 @@ $(document).ready(function(){
             url:'/partials/mypicks'
         }).done(function(data){
             $('#tab_container').html(data);
+            $('.weeks_accordion').collapse();
         })
     });
 
@@ -37,4 +38,7 @@ $(document).ready(function(){
             $('#tab_container').html(data);
         })
     });
+
+
+
 })

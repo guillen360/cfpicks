@@ -10,26 +10,7 @@ exports.index = function (req, res) {
 }
 
 exports.bigboard = function (req, res) {
-    req.params.collection = 'picks';
 
-    results = mongo.MongoClient.connect(mongourl, function(err, db) {
-        if(err) throw err;
-
-        var collection = db.collection(req.params.collection);
-        collection.find(req.query).toArray(function(err, results) {
-            if (err)
-            {
-                db.close();
-                return { "message": "error has occurred"};
-            }
-
-            db.close();
-
-            return results;
-        });
-    });
-
-    console.log(results);
     res.render('partials/bigboard');
 }
 
@@ -39,51 +20,65 @@ exports.mypicks = function (req, res) {
     $ = require('jquery');
 
     var games = {'games': []};
+    var results = {};
     var ix_ctr = 0;
 
-    var build_data = function(g, p, nbr_games){
-        games['games'][ix_ctr++] = $.extend(g, p);
-        if (nbr_games == ix_ctr){
-            //
-            // UGLY HACK... when i'm at the last game, return response...
-           console.log(games);
-           res.render('partials/mypicks', games);
-        }
+    function connect(callback){
+        mongo.MongoClient.connect(mongourl, function(err, db) {
+            if(err) throw err;
+
+            var weeksCollection = db.collection('weeks');
+            weeksCollection.find().toArray(function(err, weeksResults) {
+                if (err) throw err;
+
+                for (week in weeksResults){
+                    results[weeksResults[week]['id']] = weeksResults[week];
+                    
+                    if (weeksResults[week]['active']){
+                        var gamesCollection = db.collection('games');
+                        gamesCollection.find({'week_id': weeksResults[week]['id']}).toArray(function(err, gameResults) {
+                            if (err) throw err;
+
+                            for (var i = 0; i < gameResults.length; i++){
+                                var picksCollection = db.collection('picks');
+                                var t_game_id = gameResults[i].id;
+                                var inner_ctr = 0;
+                                picksCollection.findOne({"user_id": req.user.id, "game_id": t_game_id}, function(err, picksResults) {
+                                    var r;
+                                    if (!picksResults){ 
+                                        r = {
+                                            "pick_team_id": ""
+                                        }
+                                    } 
+                                    else {
+                                        r = {
+                                            "pick_team_id": picksResults.team_id
+                                        }
+                                    }
+                                    build_data(gameResults[inner_ctr++], r, i, callback); // i will be upper limit when this hits
+                                    // games['games'][ix_ctr++] = r;
+                                });
+                            }
+                        });
+                    }
+                }
+                // callback(results);
+            });
+        });
     }
 
-    mongo.MongoClient.connect(mongourl, function(err, db) {
-        if(err) throw err;
-
-        var gamesCollection = db.collection('games');
-        gamesCollection.find({'week_id': '1'}).toArray(function(err, gameResults) {
-            if (err) throw err;
-
-
-            for (var i = 0; i < gameResults.length; i++){
-                var picksCollection = db.collection('picks');
-                var t_game_id = gameResults[i].id;
-                var inner_ctr = 0;
-                picksCollection.findOne({"user_id": req.user.id, "game_id": t_game_id}, function(err, picksResults) {
-//                    "user_id": "1",
-//                        "game_id": "1",
-//                        "team_id": "1",
-//                        "isCorrect": null
-                    var r;
-                    if (!picksResults)
-                    { r = {
-                        "pick_team_id": ""
-                        }
-                    } else {
-                        r = {
-                            "pick_team_id": picksResults.team_id
-                        }
-                    }
-                    build_data(gameResults[inner_ctr++], r, i); // i will be upper limit when this hits
-                })
-            }
-        });
-//        db.close();
+    connect(function(){
+        res.render('partials/mypicks', {'weeks':results, 'games':games['games']});
     });
+
+    var build_data = function(g, p, nbr_games, callback){
+        games['games'][ix_ctr++] = $.extend(g, p);
+        if (nbr_games == ix_ctr){
+            callback(results);
+           // res.render('partials/mypicks', games);
+
+        }
+    }
 
 }
 
