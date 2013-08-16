@@ -16,7 +16,7 @@ div.accordion#accordion
                     div.accordion-inner
                         ul.nostyle_list
                             - for (var i = 0; i <= games.length - 1; i++) {
-                                li.row
+                                li.row 
                                     input(type="hidden", name="game_id", value="#{games[i].id}").gameid
                                     span.span5
                                         - if(games[i].pick_team_id == games[i].home_team_id){
@@ -29,6 +29,7 @@ div.accordion#accordion
                                                 i.icon-pencil
                                                 |  #{games[i]['home_team']['college']}
                                                 input(type="hidden", name="team_id", value="#{games[i]['home_team_id']}")
+                                                div #{games[i].pick_team_id} | #{games[i].home_team_id}
                                         - }
 
                                     span.span2 #{games[i]['spread']}
@@ -44,6 +45,8 @@ div.accordion#accordion
                                                 i.icon-pencil
                                                 |  #{games[i]['away_team']['college']}
                                                 input(type="hidden", name="team_id", value="#{games[i]['away_team_id']}")
+                                                div #{games[i].pick_team_id} | #{games[i].away_team_id}
+
                                         - }
                             - };
             - }else{

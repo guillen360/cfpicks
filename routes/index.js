@@ -72,7 +72,7 @@ exports.mypicks = function (req, res) {
     }
 
     connect(function(){
-        console.log(results)
+        console.log(games);
         res.render('partials/mypicks', {'weeks':results, 'games':games['games']});
     });
 
