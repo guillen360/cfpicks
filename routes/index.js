@@ -33,13 +33,14 @@ exports.mypicks = function (req, res) {
 
                 for (week in weeksResults){
                     results[weeksResults[week]['id']] = weeksResults[week];
+
+                    // console.log(results)
                     
                     if (weeksResults[week]['active']){
                         var gamesCollection = db.collection('games');
                         gamesCollection.find({'week_id': weeksResults[week]['id']}).toArray(function(err, gameResults) {
                             if (err) throw err;
 
-                            console.log('here');
                             for (var i = 0; i < gameResults.length; i++){
                                 var picksCollection = db.collection('picks');
                                 var t_game_id = gameResults[i].id;
@@ -71,6 +72,7 @@ exports.mypicks = function (req, res) {
     }
 
     connect(function(){
+        console.log(results)
         res.render('partials/mypicks', {'weeks':results, 'games':games['games']});
     });
 

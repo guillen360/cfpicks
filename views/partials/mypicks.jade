@@ -7,36 +7,47 @@ form(method="POST", action="/api/picks")
     input(type="submit")
 
 div.accordion#accordion
-    - for (var i = 1; i <= 15; i++) {
+    - for (var x = 1; x <= 15; x++) {
         div.accordion-group 
             div.accordion-heading
-                a(data-toggle="collapse", data-parent="#accordion", href="#collapse_#{weeks[i]['id']}").accordion-toggle Week #{weeks[i]['id']}
-            - if(weeks[i]['active']){
-                div(id="collapse_#{weeks[i]['id']}").accordion-body.collapse.in
+                a(data-toggle="collapse", data-parent="#accordion", href="#collapse_#{weeks[x]['id']}").accordion-toggle Week #{weeks[x]['id']}
+            - if(weeks[x]['active']){
+                div(id="collapse_#{weeks[x]['id']}").accordion-body.collapse.in
                     div.accordion-inner
                         ul.nostyle_list
                             - for (var i = 0; i <= games.length - 1; i++) {
                                 li.row
-                                    span.span3 
+                                    input(type="hidden", name="game_id", value="#{games[i].id}").gameid
+                                    span.span5
                                         - if(games[i].pick_team_id == games[i].home_team_id){
-                                            input(type="radio", name="#{games[i]['id']}", value="#{games[i]['home_team_id']}", checked="checked").span1
+                                            button(disabled).span3.btn.btn-success
+                                                i.icon-white.icon-ok
+                                                |  #{games[i]['home_team']['college']}
+                                                input(type="hidden", name="team_id", value="#{games[i]['home_team_id']}")
                                         - }else{
-                                            input(type="radio", name="#{games[i]['id']}", value="#{games[i]['home_team_id']}").span1
+                                            button.span3.btn.bnpick
+                                                i.icon-pencil
+                                                |  #{games[i]['home_team']['college']}
+                                                input(type="hidden", name="team_id", value="#{games[i]['home_team_id']}")
                                         - }
-                                            | #{games[i]['home_team']['college']}
 
-                                    span.span1 #{games[i]['spread']}
+                                    span.span2 #{games[i]['spread']}
 
-                                    span.span3 
+                                    span.span4
                                          - if(games[i].pick_team_id == games[i].away_team_id){
-                                            input(type="radio", name="#{games[i]['id']}", value="#{games[i]['away_team_id']}", checked="checked").span1
+                                            button(disabled).span3.btn.btn-success
+                                                i.icon-white.icon-ok
+                                                |  #{games[i]['away_team']['college']}
+                                                input(type="hidden", name="team_id", value="#{games[i]['away_team_id']}")
                                         - }else{
-                                            input(type="radio", name="#{games[i]['id']}", value="#{games[i]['away_team_id']}").span1
+                                            button.span3.btn.bnpick
+                                                i.icon-pencil
+                                                |  #{games[i]['away_team']['college']}
+                                                input(type="hidden", name="team_id", value="#{games[i]['away_team_id']}")
                                         - }
-                                            | #{games[i]['away_team']['college']}
                             - };
             - }else{
-                div(id="collapse_#{weeks[i]['id']}").accordion-body.collapse
+                div(id="collapse_#{weeks[x]['id']}").accordion-body.collapse
                     div.accordion-inner
             - }
     - };

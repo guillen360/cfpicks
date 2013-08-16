@@ -27,6 +27,7 @@ $(document).ready(function(){
         }).done(function(data){
             $('#tab_container').html(data);
             $('.weeks_accordion').collapse();
+            applyPickAjax();
         })
     });
 
@@ -38,6 +39,42 @@ $(document).ready(function(){
             $('#tab_container').html(data);
         })
     });
+
+    function applyPickAjax(){
+        $('.bnpick').one('click',function(){
+            var button = $(this);
+            var oButton = $(this).closest('.row').find('button').not(button);
+            var icon = $(this).find('i');
+            var oIcon = $(this).closest('.row').find('i').not(icon);
+
+            var team_id = $(this).find('input').val();
+            var game_id = $(this).closest('.row').find('.gameid').val();
+            $.ajax({
+                type:'post',
+                url:'/api/picks',
+                data: {team_id:team_id,game_id:game_id}
+            }).done(function(data){
+                button.removeClass('bnpick');
+                button.addClass('btn-success');
+                button.prop('disabled','disabled');
+                icon.removeClass('icon-pencil');
+                icon.addClass('icon-white');
+                icon.addClass('icon-ok');
+
+                if (oButton.hasClass('btn-success')){
+                    oButton.removeClass('btn-success');
+                    oButton.addClass('bnpick');
+                    oButton.prop('disabled',false);
+                    oIcon.addClass('icon-pencil');
+                    oIcon.removeClass('icon-white');
+                    oIcon.removeClass('icon-ok');
+                }
+                applyPickAjax();
+            }).error(function(errorThrown){
+                console.log(errorThrown);
+            });
+        });
+    }
 
 
 
