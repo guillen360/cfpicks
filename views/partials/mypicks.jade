@@ -1,5 +1,11 @@
 h2 here are my picks
 
+h3 form to verify pick:
+form(method="POST", action="/api/picks")
+    input(type="text", name="team_id", value="UT")
+    input(type="text", name="game_id", value="W01G01")
+    input(type="submit")
+
 div.accordion#accordion
     - for (var i = 1; i <= 15; i++) {
         div.accordion-group 

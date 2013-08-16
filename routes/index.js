@@ -39,6 +39,7 @@ exports.mypicks = function (req, res) {
                         gamesCollection.find({'week_id': weeksResults[week]['id']}).toArray(function(err, gameResults) {
                             if (err) throw err;
 
+                            console.log('here');
                             for (var i = 0; i < gameResults.length; i++){
                                 var picksCollection = db.collection('picks');
                                 var t_game_id = gameResults[i].id;
@@ -47,12 +48,14 @@ exports.mypicks = function (req, res) {
                                     var r;
                                     if (!picksResults){ 
                                         r = {
-                                            "pick_team_id": ""
+                                            "pick_team_id": "",
+                                            "isCorrect": null
                                         }
                                     } 
                                     else {
                                         r = {
-                                            "pick_team_id": picksResults.team_id
+                                            "pick_team_id": picksResults.team_id,
+                                            "isCorrect": picksResults.isCorrect
                                         }
                                     }
                                     build_data(gameResults[inner_ctr++], r, i, callback); // i will be upper limit when this hits
@@ -79,7 +82,30 @@ exports.mypicks = function (req, res) {
 
         }
     }
+}
 
+exports.updateMyPicks = function (req, res){
+    var updatePick = require('../server').findOrCreateByCollection;
+
+    sendResp = function(results){
+        if (results){
+            res.json(results);
+        } else {
+            res.json(500, {"error_message": ["an error occurred saving user pick"]});
+        }
+    }
+
+    queryDoc = {};
+    updateDoc = {};
+
+    // build query doc:
+    queryDoc["user_id"] = req.user.id;
+    queryDoc["game_id"] = req.body.game_id
+    // build updatedoc by adding the team_id (user can go back and forth on pick):
+    updateDoc = queryDoc;
+    updateDoc["team_id"] = req.body.team_id;
+
+    updatePick(queryDoc, updateDoc, "picks", sendResp);
 }
 
 exports.contact = function (req, res) {

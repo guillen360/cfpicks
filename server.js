@@ -75,25 +75,29 @@ everyauth.everymodule
         callback(null, usersById[id]);
     });
 
-findOrCreateByUserData = function(searchDoc, UserDoc) {
+findOrCreateByCollection = function(searchDoc, updateDoc, collectionName, callbackFunc) {
     mongo.MongoClient.connect(mongourl, function(err, db){
         if (err) throw err;
         // ++++++++++++++++
-        var collection = db.collection("users");
+        var collection = db.collection(collectionName);
         collection.findAndModify(
             searchDoc,
             [['_id','asc']],
-            UserDoc,
+            updateDoc,
             {upsert:true, new:true},
             function(err, results) {
                 if (err) throw err;
                 // ++++++++++++++++
                 // Let's close the db
+                if (callbackFunc){
+                    callbackFunc(results);
+                }
                 db.close();
             }
         );
     });
 };
+exports.findOrCreateByCollection = findOrCreateByCollection;
 
 var usersByGoogleId = {};
 var usersByLinkedinId = {};
@@ -117,7 +121,7 @@ everyauth.google
             name: googleUser.given_name,
             google: googleUser
         };
-        findOrCreateByUserData(searchDoc, userDoc);
+        findOrCreateByCollection(searchDoc, userDoc, "users", null);
 
         return usersByGoogleId[googleUser.id] || (usersByGoogleId[googleUser.id] = addUser('google', userDoc, googleUser.id));
     })
@@ -136,7 +140,7 @@ everyauth.linkedin
             name: linkedinUser.firstName,
             linkedin: linkedinUser
         };
-        findOrCreateByUserData(searchDoc, userDoc);
+        findOrCreateByCollection(searchDoc, userDoc, "users", null);
 
         return usersByLinkedinId[linkedinUser.id] || (usersByLinkedinId[linkedinUser.id] = addUser('linkedin', userDoc, linkedinUser.id));
     })
@@ -156,7 +160,7 @@ everyauth
             name: twitUser.name,
             twitter: twitUser
         };
-        findOrCreateByUserData(searchDoc, userDoc);
+        findOrCreateByCollection(searchDoc, userDoc, "users", null);
 
         return usersByTwitId[twitUser.id_str] || (usersByTwitId[twitUser.id_str] = addUser('twitter', userDoc, twitUser.id_str));
 
@@ -178,7 +182,7 @@ everyauth
             name: fbUserMetadata.first_name,
             facebook: fbUserMetadata
         };
-        findOrCreateByUserData(searchDoc, userDoc);
+        findOrCreateByCollection(searchDoc, userDoc, "users", null);
 
         return usersByFbId[fbUserMetadata.id] || (usersByFbId[fbUserMetadata.id] = addUser('facebook', userDoc, fbUserMetadata.id));
     })
@@ -225,13 +229,13 @@ var approvedDbs = ['teams', 'picks', 'weeks', 'games'];
 
 sendCollection = function(req, res){
     if (req.loggedIn === false)
-        res.send(401, {message: "You are not authorized"});
+        res.send(401, {error_message: ["You are not authorized"]});
 
     if (approvedDbs.indexOf(req.params.collection) == -1)
     {
         // not in approved list:
 //        res.send(500, {messsage: "page could not be found"});
-        res.send(500, {messsage: "resource not found"});
+        res.send(500, {error_message: ["resource not found"]});
     }
     mongo.MongoClient.connect(mongourl, function(err, db) {
         if(err) throw err;
@@ -268,12 +272,15 @@ app.get('/login', function(req, res){
     res.render('login');
 });
 
-// update picks:
-app.post('/api/picks', authenticate, function(req, res){
+// games for the week:
+app.get('/api/mypicks/:week_id', authenticate, function(req, res){
 
-    console.log("a post request was submitted");
+    console.log("a get request was submitted to get my games and picks");
 
 });
+
+// update picks:
+app.post('/api/picks', authenticate, routes.updateMyPicks);
 
 // query database:
 app.get('/api/:collection', authenticate, sendCollection);
