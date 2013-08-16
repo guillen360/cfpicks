@@ -102,9 +102,10 @@ exports.updateMyPicks = function (req, res){
 
     // build query doc:
     queryDoc["user_id"] = req.user.id;
-    queryDoc["game_id"] = req.body.game_id
+    queryDoc["game_id"] = req.body.game_id;
     // build updatedoc by adding the team_id (user can go back and forth on pick):
-    updateDoc = queryDoc;
+    updateDoc["user_id"] = req.user.id;
+    updateDoc["game_id"] = req.body.game_id;
     updateDoc["team_id"] = req.body.team_id;
 
     updatePick(queryDoc, updateDoc, "picks", sendResp);
