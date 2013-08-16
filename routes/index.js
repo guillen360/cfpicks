@@ -23,6 +23,9 @@ exports.mypicks = function (req, res) {
     var results = {};
     var ix_ctr = 0;
 
+    
+
+
     function connect(callback){
         mongo.MongoClient.connect(mongourl, function(err, db) {
             if(err) throw err;
@@ -107,8 +110,11 @@ exports.updateMyPicks = function (req, res){
     updateDoc["user_id"] = req.user.id;
     updateDoc["game_id"] = req.body.game_id;
     updateDoc["team_id"] = req.body.team_id;
+    updateDoc["isCorrect"] = null;
 
-    updatePick(queryDoc, updateDoc, "picks", sendResp);
+//    updatePick(queryDoc, updateDoc, "picks", sendResp);
+    updatePick(queryDoc, updateDoc, "picks", null);
+    res.json(updateDoc);
 }
 
 exports.contact = function (req, res) {

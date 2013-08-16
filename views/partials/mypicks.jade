@@ -1,10 +1,4 @@
-h2 here are my picks
-
-h3 form to verify pick:
-form(method="POST", action="/api/picks")
-    input(type="text", name="team_id", value="UT")
-    input(type="text", name="game_id", value="W01G01")
-    input(type="submit")
+h2 make your picks...
 
 div.accordion#accordion
     - for (var x = 1; x <= 15; x++) {
@@ -16,37 +10,34 @@ div.accordion#accordion
                     div.accordion-inner
                         ul.nostyle_list
                             - for (var i = 0; i <= games.length - 1; i++) {
-                                li.row 
+                                li.row.well
                                     input(type="hidden", name="game_id", value="#{games[i].id}").gameid
-                                    span.span5
+                                    span.span4
                                         - if(games[i].pick_team_id == games[i].home_team_id){
-                                            button(disabled).span3.btn.btn-success
+                                            button(disabled).span3.btn.btn-large.btn-success
                                                 i.icon-white.icon-ok
                                                 |  #{games[i]['home_team']['college']}
                                                 input(type="hidden", name="team_id", value="#{games[i]['home_team_id']}")
                                         - }else{
-                                            button.span3.btn.bnpick
+                                            button.span3.btn.btn-large.bnpick
                                                 i.icon-pencil
                                                 |  #{games[i]['home_team']['college']}
                                                 input(type="hidden", name="team_id", value="#{games[i]['home_team_id']}")
-                                                div #{games[i].pick_team_id} | #{games[i].home_team_id}
                                         - }
 
-                                    span.span2 #{games[i]['spread']}
+                                    span.span1  at (#{games[i]['spread']})
 
                                     span.span4
                                          - if(games[i].pick_team_id == games[i].away_team_id){
-                                            button(disabled).span3.btn.btn-success
+                                            button(disabled).span3.btn.btn-large.btn-success
                                                 i.icon-white.icon-ok
                                                 |  #{games[i]['away_team']['college']}
                                                 input(type="hidden", name="team_id", value="#{games[i]['away_team_id']}")
                                         - }else{
-                                            button.span3.btn.bnpick
+                                            button.span3.btn.btn-large.bnpick
                                                 i.icon-pencil
                                                 |  #{games[i]['away_team']['college']}
                                                 input(type="hidden", name="team_id", value="#{games[i]['away_team_id']}")
-                                                div #{games[i].pick_team_id} | #{games[i].away_team_id}
-
                                         - }
                             - };
             - }else{

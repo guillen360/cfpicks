@@ -73,7 +73,8 @@ function addUser (source, userDoc, user_id) {
 everyauth.everymodule
     .findUserById( function (id, callback) {
         callback(null, usersById[id]);
-    });
+    }
+);
 
 findOrCreateByCollection = function(searchDoc, updateDoc, collectionName, callbackFunc) {
     mongo.MongoClient.connect(mongourl, function(err, db){
@@ -92,12 +93,48 @@ findOrCreateByCollection = function(searchDoc, updateDoc, collectionName, callba
                 if (callbackFunc){
                     callbackFunc(results);
                 }
-                db.close();
+//                db.close();
+            }
+        );
+    });
+};
+findAllByCollection = function(searchDoc, collectionName, callbackFunc) {
+    mongo.MongoClient.connect(mongourl, function(err, db){
+        if (err) throw err;
+        // ++++++++++++++++
+        var collection = db.collection(collectionName);
+        collection.find(searchDoc).toArray(function(err, results) {
+            if (err) throw err;
+            // ++++++++++++++++
+            // Let's close the db
+            if (callbackFunc){
+                callbackFunc(results);
+            }
+//            db.close();
+            }
+        );
+    });
+};
+findOneByCollection = function(searchDoc, collectionName, callbackFunc) {
+    mongo.MongoClient.connect(mongourl, function(err, db){
+        if (err) throw err;
+        // ++++++++++++++++
+        var collection = db.collection(collectionName);
+        collection.findOne(searchDoc, function(err, results) {
+            if (err) throw err;
+            // ++++++++++++++++
+            // Let's close the db
+            if (callbackFunc){
+                callbackFunc(results);
+            }
+//                db.close();
             }
         );
     });
 };
 exports.findOrCreateByCollection = findOrCreateByCollection;
+exports.findAllByCollection = findAllByCollection;
+exports.findOneByCollection = findOneByCollection;
 
 var usersByGoogleId = {};
 var usersByLinkedinId = {};
