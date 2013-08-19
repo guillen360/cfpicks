@@ -327,6 +327,7 @@ app.get('/partials/index', authenticate, routes.index);
 app.get('/partials/bigboard', authenticate, routes.bigboard);
 app.get('/partials/mypicks', authenticate, routes.mypicks);
 app.get('/partials/contact', authenticate, routes.contact);
+app.get('/partials/finishedpicks', authenticate, routes.finishedpicks);
 
 // default:
 app.get('/', authenticate, routes.base);

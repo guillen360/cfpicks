@@ -28,7 +28,8 @@ $(document).ready(function(){
             $('#tab_container').html(data);
             $('.weeks_accordion').collapse();
             applyPickAjax();
-        })
+            applyWeekSelect();
+        });
     });
 
     $('a[href="#contact"]').on('click',function(){
@@ -75,6 +76,24 @@ $(document).ready(function(){
             });
         });
     }
+
+    function applyWeekSelect(){
+        $('.week_link').one('click',function(){
+            var inner = $(this).closest('.accordion-group').find('.accordion-inner');
+            var week = $(this).find('.week_num').val();
+            $.ajax({
+                type:'get',
+                url:'/partials/finishedpicks',
+                data:{week:week}
+            }).done(function(data){
+                inner.html(data);
+            }).fail(function(errorThrown){
+                console.log(errorThrown);
+            });
+        });
+    }
+
+
 
 
 
