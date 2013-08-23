@@ -16,7 +16,8 @@ exports.bigboard = function (req, res) {
     var getActiveWeek = require('../server').findOneByCollection;
 
     var sendBigBoard = function(results){
-        res.render('partials/bigboard', results);
+        console.log(results)
+        res.render('partials/bigboard', {'bigboard': results});
     }
 
     var getBigBoard = function(result){
