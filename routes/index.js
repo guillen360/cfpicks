@@ -23,7 +23,7 @@ exports.bigboard = function (req, res) {
         bigBoardCollection({'week_id': result['id']}, 'bigboard', sendBigBoard);
     }
     if (req.body.week_id){
-        getBigBoard({'id': req.body.game_id})
+        getBigBoard({'id': req.body.week_id})
     } else {
         getActiveWeek({"active": true}, 'weeks', getBigBoard)
     }
