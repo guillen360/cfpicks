@@ -14,7 +14,8 @@ $(document).ready(function(){
     $('a[href="#bigboard"]').on('click',function(){
         $.ajax({
             type:'get',
-            url:'/partials/bigboard'
+            url:'/partials/bigboard',
+            data: {week_id:1}
         }).done(function(data){
             $('#tab_container').html(data);
         })

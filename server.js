@@ -262,7 +262,7 @@ if ('development' == app.get('env')) {
  **********************************************************
  **********************************************************
  */
-var approvedDbs = ['teams', 'picks', 'weeks', 'games'];
+var approvedDbs = ['teams', 'picks', 'weeks', 'games', 'bigboard'];
 
 sendCollection = function(req, res){
     if (req.loggedIn === false)
