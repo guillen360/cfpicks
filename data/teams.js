@@ -169,97 +169,125 @@ exports.teams = {
         "state": "TX",
         "nickname": "Bearkats",
         "logo": "bearkats.jpg"
+    },
+    "ULM": {
+        "id": "ULM",
+        "college" : "Louisiana-Monroe",
+        "long_name": "University of Louisiana at Monroe",
+        "abbreviation": "ULM",
+        "city": "Monroe",
+        "state": "LA",
+        "nickname": "Warhawks",
+        "logo": "warhawks.jpg"
+    },
+    "ALA": {
+        "id": "ALA",
+        "college" : "Alabama",
+        "long_name": "Alabama University",
+        "abbreviation": "ALA",
+        "city": "Tuscaloosa",
+        "state": "AL",
+        "nickname": "Crimson Tide",
+        "logo": "crimson_tide.jpg"
+    },
+    "VTECH": {
+        "id": "VTECH",
+        "college" : "Virginia Tech",
+        "long_name": "Virginia Tech University",
+        "abbreviation": "VTECH",
+        "city": "Blacksburg",
+        "state": "VA",
+        "nickname": "Hokies",
+        "logo": "hokies.jpg"
+    },
+    "SMU": {
+        "id": "SMU",
+        "college" : "SMU",
+        "long_name": "Southern Methodist University",
+        "abbreviation": "SMU",
+        "city": "Universitiy Park",
+        "state": "TX",
+        "nickname": "Mustangs",
+        "logo": "mustangs.jpg"
+    },
+    "NAU": {
+        "id": "NAU",
+        "college" : "Northern Arizona",
+        "long_name": "Northern Arizona University",
+        "abbreviation": "NAU",
+        "city": "Flagstaff",
+        "state": "AZ",
+        "nickname": "Lumberjacks",
+        "logo": "lumberjacks.jpg"
+    },
+    "AZ": {
+        "id": "AZ",
+        "college" : "Arizona",
+        "long_name": "University of Arizona",
+        "abbreviation": "AZ",
+        "city": "Tucson",
+        "state": "AZ",
+        "nickname": "Wildcats",
+        "logo": "wildcats.jpg"
+    },
+    "TEMPL": {
+        "id": "TEMPL",
+        "college" : "Temple",
+        "long_name": "Temple University",
+        "abbreviation": "TEMPL",
+        "city": "Philadelphia",
+        "state": "PA",
+        "nickname": "Owls",
+        "logo": "owls.jpg"
+    },
+    "UGA": {
+        "id": "UGA",
+        "college" : "Georgia",
+        "long_name": "University of Georgia",
+        "abbreviation": "UGA",
+        "city": "Athens",
+        "state": "GA",
+        "nickname": "Bulldogs",
+        "logo": "bulldogs.jpg"
+    },
+    "CLEM": {
+        "id": "CLEM",
+        "college" : "Clemson",
+        "long_name": "Clemson University",
+        "abbreviation": "CLEM",
+        "city": "Clemson",
+        "state": "SC",
+        "nickname": "Tigers",
+        "logo": "c_tigers.jpg"
+    },
+    "LSU": {
+        "id": "LSU",
+        "college" : "LSU",
+        "long_name": "Louisiana State University",
+        "abbreviation": "LSU",
+        "city": "Baton Rouge",
+        "state": "LA",
+        "nickname": "Fighting Tigers",
+        "logo": "lsu_tigers.jpg"
+    },
+    "TSU": {
+        "id": "TSU",
+        "college" : "Texas State",
+        "long_name": "Texas State University",
+        "abbreviation": "TSU",
+        "city": "San Marcos",
+        "state": "TX",
+        "nickname": "Bobcats",
+        "logo": "bobcats.jpg"
+    },
+    "SOMISS": {
+        "id": "SOMISS",
+        "college" : "Southern Miss",
+        "long_name": "University of Southern Mississippi",
+        "abbreviation": "SOMISS",
+        "city": "Hattiesburg",
+        "state": "MS",
+        "nickname": "Golden Eagles",
+        "logo": "golden_eagles.jpg"
     }
-
-    //    // fix:
-//    {
-//        "id": "ALA",
-//        "college" : "Alabama",
-//        "long_name": "University of Mississippi",
-//        "abbreviation": "OLEMISS",
-//        "city": "Oxford",
-//        "state": "MS",
-//        "nickname": "Rebels",
-//        "logo": "olemiss.jpg"
-//    },
-//    {
-//        "id": "SMU",
-//        "college" : "SMU",
-//        "long_name": "University of Mississippi",
-//        "abbreviation": "OLEMISS",
-//        "city": "Oxford",
-//        "state": "MS",
-//        "nickname": "Rebels",
-//        "logo": "olemiss.jpg"
-//    },
-//    {
-//        "id": "ARK",
-//        "college" : "Arkansas",
-//        "long_name": "University of Mississippi",
-//        "abbreviation": "OLEMISS",
-//        "city": "Oxford",
-//        "state": "MS",
-//        "nickname": "Rebels",
-//        "logo": "olemiss.jpg"
-//    },
-//    {
-//        "id": "AUB",
-//        "college" : "Auburn",
-//        "long_name": "University of Mississippi",
-//        "abbreviation": "OLEMISS",
-//        "city": "Oxford",
-//        "state": "MS",
-//        "nickname": "Rebels",
-//        "logo": "olemiss.jpg"
-//    },
-//    {
-//        "id": "VAND",
-//        "college" : "Vanderbilt",
-//        "long_name": "University of Mississippi",
-//        "abbreviation": "OLEMISS",
-//        "city": "Oxford",
-//        "state": "MS",
-//        "nickname": "Rebels",
-//        "logo": "olemiss.jpg"
-//    },
-//    {
-//        "id": "UTEP",
-//        "college" : "UTEP",
-//        "long_name": "University of Texas at El Paso",
-//        "abbreviation": "OLEMISS",
-//        "city": "Oxford",
-//        "state": "MS",
-//        "nickname": "Rebels",
-//        "logo": "olemiss.jpg"
-//    },
-//    {
-//        "id": "MISSST",
-//        "college" : "Miss. St",
-//        "long_name": "University of Mississippi",
-//        "abbreviation": "OLEMISS",
-//        "city": "Oxford",
-//        "state": "MS",
-//        "nickname": "Rebels",
-//        "logo": "olemiss.jpg"
-//    },
-//    {
-//        "id": "LSU",
-//        "college" : "LSU",
-//        "long_name": "University of Mississippi",
-//        "abbreviation": "OLEMISS",
-//        "city": "Oxford",
-//        "state": "MS",
-//        "nickname": "Rebels",
-//        "logo": "olemiss.jpg"
-//    },
-//    {
-//        "id": "MIZZ",
-//        "college" : "Missouri",
-//        "long_name": "University of Missouri",
-//        "abbreviation": "MIZZ",
-//        "city": "Oxford",
-//        "state": "MS",
-//        "nickname": "Rebels",
-//        "logo": "olemiss.jpg"
-//    }
 };

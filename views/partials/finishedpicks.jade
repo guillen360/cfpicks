@@ -4,27 +4,39 @@ ul.nostyle_list
             li.row.well
                 input(type="hidden", name="game_id", value="#{games[i].id}").gameid
                 span.span4
-                    - if(games[i].pick_team_id == games[i].home_team_id){
+                    - if(games[i].pick_team_id == games[i].away_team_id){
                         button(disabled).span3.btn.btn-large.btn-success
                             i.icon-white.icon-ok
-                            |  #{games[i]['home_team']['college']}
+                            |  #{games[i]['away_team']['college']}
+                            - if (games[i].spread < 0){
+                                em  (by #{String(games[i].spread).substring(1,3)})
+                            - }
                     - }else{
                         button(disabled).span3.btn.btn-large
                             i.icon-pencil
-                            |  #{games[i]['home_team']['college']}
+                            |  #{games[i]['away_team']['college']}
+                            - if (games[i].spread < 0){
+                                em  (by #{String(games[i].spread).substring(1,3)})
+                            - }
                     - }
 
-                span.span1  at (#{games[i]['spread']})
+                span.span1  at
 
                 span.span4
-                     - if(games[i].pick_team_id == games[i].away_team_id){
+                     - if(games[i].pick_team_id == games[i].home_team_id){
                         button(disabled).span3.btn.btn-large.btn-success
                             i.icon-white.icon-ok
-                            |  #{games[i]['away_team']['college']}
+                            |  #{games[i]['home_team']['college']}
+                            - if (games[i].spread >= 0){
+                                em  (by #{games[i].spread})
+                            - }
                     - }else{
                         button(disabled).span3.btn.btn-large
                             i.icon-pencil
-                            |  #{games[i]['away_team']['college']}
+                            |  #{games[i]['home_team']['college']}
+                            - if (games[i].spread >= 0){
+                                em  (by #{games[i].spread})
+                            - }
                     - }
         - };
     - }else{
