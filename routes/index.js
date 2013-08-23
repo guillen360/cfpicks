@@ -10,8 +10,24 @@ exports.index = function (req, res) {
 }
 
 exports.bigboard = function (req, res) {
+    mongourl = require('../server').mongourl;
+    mongo = require('mongodb');
+    var bigBoardCollection = require('../server').findAllByCollection;
+    var getActiveWeek = require('../server').findOneByCollection;
 
-    res.render('partials/bigboard');
+    var sendBigBoard = function(results){
+        res.render('partials/bigboard', results);
+    }
+
+    var getBigBoard = function(result){
+        bigBoardCollection({'week_id': result['id']}, 'bigboard', sendBigBoard);
+    }
+    if (req.body.week_id){
+        getBigBoard({'id': req.body.game_id})
+    } else {
+        getActiveWeek({"active": true}, 'weeks', getBigBoard)
+    }
+
 }
 
 exports.mypicks = function (req, res) {

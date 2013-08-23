@@ -2,9 +2,9 @@ h2 make your picks...
 
 div.accordion#accordion
     - for (var x = 1; x <= 15; x++) {
-        div.accordion-group 
+        div.accordion-group
             div.accordion-heading
-                a(data-toggle="collapse", data-parent="#accordion", href="#collapse_#{weeks[x]['id']}").accordion-toggle.week_link 
+                a(data-toggle="collapse", data-parent="#accordion", href="#collapse_#{weeks[x]['id']}").accordion-toggle.week_link
                     | Week #{weeks[x]['id']}
                     input(type="hidden", name="week_num", class="week_num", value="#{weeks[x]['id']}")
             - if(weeks[x]['active']){
@@ -15,31 +15,43 @@ div.accordion#accordion
                                 li.row.well
                                     input(type="hidden", name="game_id", value="#{games[i].id}").gameid
                                     span.span4
+                                        - if(games[i].pick_team_id == games[i].away_team_id){
+                                            button(disabled).span3.btn.btn-large.btn-success
+                                                i.icon-white.icon-ok
+                                                |  #{games[i]['away_team']['college']}
+                                                - if (games[i].spread < 0){
+                                                    em  (by #{String(games[i].spread).substring(1,3)})
+                                                - }
+                                                input(type="hidden", name="team_id", value="#{games[i]['away_team_id']}")
+                                        - }else{
+                                            button.span3.btn.btn-large.bnpick
+                                                i.icon-pencil
+                                                |  #{games[i]['away_team']['college']}
+                                                - if (games[i].spread < 0){
+                                                    em  (by #{String(games[i].spread).substring(1,3)})
+                                                - }
+                                                input(type="hidden", name="team_id", value="#{games[i]['away_team_id']}")
+                                        - }
+
+                                    span.span1  at
+
+                                    span.span4
                                         - if(games[i].pick_team_id == games[i].home_team_id){
                                             button(disabled).span3.btn.btn-large.btn-success
                                                 i.icon-white.icon-ok
                                                 |  #{games[i]['home_team']['college']}
+                                                - if (games[i].spread >= 0){
+                                                    em  (by #{games[i].spread})
+                                                - }
                                                 input(type="hidden", name="team_id", value="#{games[i]['home_team_id']}")
                                         - }else{
                                             button.span3.btn.btn-large.bnpick
                                                 i.icon-pencil
                                                 |  #{games[i]['home_team']['college']}
+                                                - if (games[i].spread >= 0){
+                                                    em  (by #{games[i].spread})
+                                                - }
                                                 input(type="hidden", name="team_id", value="#{games[i]['home_team_id']}")
-                                        - }
-
-                                    span.span1  at (#{games[i]['spread']})
-
-                                    span.span4
-                                         - if(games[i].pick_team_id == games[i].away_team_id){
-                                            button(disabled).span3.btn.btn-large.btn-success
-                                                i.icon-white.icon-ok
-                                                |  #{games[i]['away_team']['college']}
-                                                input(type="hidden", name="team_id", value="#{games[i]['away_team_id']}")
-                                        - }else{
-                                            button.span3.btn.btn-large.bnpick
-                                                i.icon-pencil
-                                                |  #{games[i]['away_team']['college']}
-                                                input(type="hidden", name="team_id", value="#{games[i]['away_team_id']}")
                                         - }
                             - };
             - }else{
