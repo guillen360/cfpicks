@@ -11,7 +11,7 @@ var express = require('express')
     , path = require('path')
     , routes = require('./routes')
     , mongo = require('mongodb')
-    , conf = require('./conf')
+//    , conf = require('./conf')
     , everyauth = require('everyauth');
 
 /**********************************************************
@@ -142,8 +142,8 @@ var usersByFbId = {};
 var usersByTwitId = {};
 
 everyauth.google
-    .appId(conf.google.clientId)
-    .appSecret(conf.google.clientSecret)
+    .appId(process.env.GOOGLE_APPID)
+    .appSecret(process.env.GOOGLE_SECRET)
     .scope('https://www.googleapis.com/auth/userinfo.profile https://www.google.com/m8/feeds/')
     .findOrCreateUser( function (sess, accessToken, extra, googleUser) {
         console.log("i have logged in using GOOGLE");
@@ -165,8 +165,8 @@ everyauth.google
     .redirectPath('/#index');
 
 everyauth.linkedin
-    .consumerKey(conf.linkedin.apiKey)
-    .consumerSecret(conf.linkedin.apiSecret)
+    .consumerKey(process.env.LINKED_APPID)
+    .consumerSecret(process.env.LINKED_SECRET)
     .findOrCreateUser( function (sess, accessToken, accessSecret, linkedinUser) {
         console.log("i have logged in using LINKEDIN");
 
@@ -185,8 +185,8 @@ everyauth.linkedin
 
 everyauth
     .twitter
-    .consumerKey(conf.twit.consumerKey)
-    .consumerSecret(conf.twit.consumerSecret)
+    .consumerKey(process.env.TWIT_APPID)
+    .consumerSecret(process.env.TWIT_SECRET)
     .findOrCreateUser( function (sess, accessToken, accessSecret, twitUser) {
         console.log("i have logged in using TWITTER");
 
@@ -206,8 +206,8 @@ everyauth
 
 everyauth
     .facebook
-    .appId(conf.fb.appId)
-    .appSecret(conf.fb.appSecret)
+    .appId(process.env.FB_APPID)
+    .appSecret(process.env.FB_SECRET)
     .scope('email')
     .findOrCreateUser( function (session, accessToken, accessTokenExtra, fbUserMetadata) {
         console.log("i have logged in using facebook");
@@ -243,7 +243,7 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(express.cookieParser(conf.secretCookieParser));
+app.use(express.cookieParser(process.env.SECRET_COOKIE_PARSER));
 app.use(express.session());
 app.use(everyauth.middleware(app));
 app.use(app.router);

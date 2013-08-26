@@ -18,15 +18,21 @@ var saveBigBoard = function(){
         var users = {};
         for (var u = 0; u < Users.length; u++){
             pick_team_id = null;
+            pick_team_name = null;
             isCorrect = null;
             for (var p = 0; p < Picks.length; p++){
                 if (Picks[p]['user_id'] == Users[u]['id'] && Picks[p]['game_id'] == Games[g]['id']){
                     pick_team_id = Picks[p]['team_id'];
                     isCorrect = Picks[p]['isCorrect'];
+                    if (Games[g]['home_team_id'] == pick_team_id) {
+                        pick_team_name = Games[g]['home_team']['college']
+                    } else if (Games[g]['away_team_id']  == pick_team_id) {
+                        pick_team_name = Games[g]['away_team']['college']
+                    }
                 }
             }
 
-            users[Users[u]['id']] = {'pick_team_id': pick_team_id, 'isCorrect': isCorrect, 'name': Users[u]['name']}
+            users[Users[u]['id']] = {'pick_team_id': pick_team_id, 'isCorrect': isCorrect, 'name': Users[u]['name'], 'pick_team_name': pick_team_name}
         }
 
         queryDoc = {'week_id': Games[g]['week_id'],
