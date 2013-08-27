@@ -43,6 +43,42 @@ $(document).ready(function(){
         })
     });
 
+    function bnPick(el){
+        var button = el;
+        var oButton = el.closest('.row').find('button').not(button);
+        var icon = el.find('i');
+        var oIcon = el.closest('.row').find('i').not(icon);
+
+        var team_id = el.find('input').val();
+        var game_id = el.closest('.row').find('.gameid').val();
+        $.ajax({
+            type:'post',
+            url:'/api/picks',
+            data: {team_id:team_id,game_id:game_id}
+        }).done(function(data){
+            button.removeClass('bnpick');
+            button.addClass('btn-success');
+            button.prop('disabled','disabled');
+            icon.removeClass('icon-pencil');
+            icon.addClass('icon-white');
+            icon.addClass('icon-ok');
+
+            if (oButton.hasClass('btn-success')){
+                oButton.removeClass('btn-success');
+                oButton.addClass('bnpick');
+                oButton.prop('disabled',false);
+                oIcon.addClass('icon-pencil');
+                oIcon.removeClass('icon-white');
+                oIcon.removeClass('icon-ok');
+            }
+            el.one('click',function(){
+                bnPick();
+            });
+        }).error(function(errorThrown){
+            console.log(errorThrown);
+        });
+    }
+
     function applyPickAjax(){
         $('.bnpick').one('click',function(){
             var button = $(this);
@@ -72,9 +108,11 @@ $(document).ready(function(){
                     oIcon.removeClass('icon-white');
                     oIcon.removeClass('icon-ok');
                 }
-                applyPickAjax();
             }).error(function(errorThrown){
                 console.log(errorThrown);
+            });
+            oButton.one('click',function(){
+                bnPick($(this));
             });
         });
     }

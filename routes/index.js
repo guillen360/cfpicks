@@ -6,23 +6,27 @@ exports.base = function(req, res){
 
 // partials:
 exports.index = function (req, res) {
+    create_bigboard = require('../data/create_bigBoard').create_bigboard;
+    create_bigboard();
+    
     res.render('partials/index');
 }
 
 exports.bigboard = function (req, res) {
     mongourl = require('../server').mongourl;
     mongo = require('mongodb');
+
     var bigBoardCollection = require('../server').findAllByCollection;
     var getActiveWeek = require('../server').findOneByCollection;
 
     var sendBigBoard = function(results){
-        console.log(results)
         res.render('partials/bigboard', {'bigboard': results});
     }
 
     var getBigBoard = function(result){
         bigBoardCollection({'week_id': result['id']}, 'bigboard', sendBigBoard);
     }
+
     if (req.query.week_id){
         getBigBoard({'id': req.query.week_id})
     } else {
