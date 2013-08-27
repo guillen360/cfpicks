@@ -1,0 +1,33 @@
+- if(bigboard.length > 0){
+    table.table.table-striped
+        thead
+            tr
+                th Game
+                - for (id in bigboard[0].users){
+                    th
+                        | #{bigboard[0].users[id].name}
+                - }
+        tbody
+            - for (index in bigboard){
+                tr
+                    td 
+                        - if(bigboard[index].game.wasSpreadCovered){ 
+                            | #{bigboard[index].game.away_team.college}(L) at #{bigboard[index].game.home_team.college}(W)
+                        - }else{
+                            | #{bigboard[index].game.away_team.college}(W) at #{bigboard[index].game.home_team.college}(L)
+                        - }
+                    - for (id in bigboard[0].users){
+                        td 
+                            - if( bigboard[index].users[id].isCorrect == null){
+                                | No Pick
+                            - }else if (!bigboard[index].users[id].isCorrect){
+                                | Incorrect
+                            - }else if(bigboard[index].users[id].isCorrect){
+                                | Correct
+                            - }
+                    - }
+            - }
+- }else{
+    div No Games Scheduled.
+- }
+    

@@ -14,10 +14,11 @@ $(document).ready(function(){
     $('a[href="#bigboard"]').on('click',function(){
         $.ajax({
             type:'get',
-            url:'/partials/bigboard',
-            data: {week_id:1}
+            url:'/partials/bigboard'
+            // data: {week_id:1}
         }).done(function(data){
             $('#tab_container').html(data);
+            applyBigboardAjax();
         })
     });
 
@@ -86,6 +87,22 @@ $(document).ready(function(){
                 type:'get',
                 url:'/partials/finishedpicks',
                 data:{week:week}
+            }).done(function(data){
+                inner.html(data);
+            }).fail(function(errorThrown){
+                console.log(errorThrown);
+            });
+        });
+    }
+
+    function applyBigboardAjax(){
+        $('.bigboard_week_link').one('click',function(){
+            var inner = $(this).closest('.accordion-group').find('.accordion-inner');
+            var week = $(this).find('.week_num').val();
+            $.ajax({
+                type:'get',
+                url:'/partials/finishedbigboard',
+                data:{week_id:week}
             }).done(function(data){
                 inner.html(data);
             }).fail(function(errorThrown){

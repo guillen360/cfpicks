@@ -1,5 +1,38 @@
-h2 this is the bigboard
+div.accordion#accordion
+    - for (var x = 1; x <= 15; x++) {
+        div.accordion-group
+            div.accordion-heading
+                - if(bigboard[0].week_id == x){
+                    a(data-toggle="collapse", data-parent="#accordion", href="#collapse_#{x}").accordion-toggle
+                        | Week #{x} - Active
+                        input(type="hidden", name="week_num", class="week_num", value="#{x}")
+                - } else{
+                    a(data-toggle="collapse", data-parent="#accordion", href="#collapse_#{x}").accordion-toggle.bigboard_week_link
+                        | Week #{x}
+                        input(type="hidden", name="week_num", class="week_num", value="#{x}")
+                - } 
+            - if(bigboard[0].week_id == x){
+                div(id="collapse_#{x}").accordion-body.collapse.in
+                    div.accordion-inner
+                        table.table.table-striped
+                            thead
+                                tr
+                                    th Game
+                                    - for (id in bigboard[0].users){
+                                        th
+                                            | #{bigboard[0].users[id].name}
+                                    - }
+                            tbody
+                                - for (index in bigboard){
+                                    tr
+                                        td #{bigboard[index].game.away_team.college} at #{bigboard[index].game.home_team.college}
+                                        - for (id in bigboard[0].users){
+                                            td #{bigboard[index].users[id].pick_team_name}
+                                        - }
+                                - }
 
-div bigboard here
-
-div #{bigboard}
+            - }else{
+                div(id="collapse_#{x}").accordion-body.collapse
+                    div.accordion-inner
+            - }
+    - };

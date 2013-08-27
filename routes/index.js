@@ -31,6 +31,24 @@ exports.bigboard = function (req, res) {
 
 }
 
+exports.finishedbigboard = function (req, res) {
+    mongourl = require('../server').mongourl;
+    mongo = require('mongodb');
+    var bigBoardCollection = require('../server').findAllByCollection;
+    var getActiveWeek = require('../server').findOneByCollection;
+
+    var sendBigBoard = function(results){
+        console.log(results)
+        res.render('partials/finishedbigboard', {'bigboard': results});
+    }
+
+    var getBigBoard = function(result){
+        bigBoardCollection({'week_id': result['id']}, 'bigboard', sendBigBoard);
+    }
+    getBigBoard({'id': req.query.week_id})
+
+}
+
 exports.mypicks = function (req, res) {
     mongourl = require('../server').mongourl;
     mongo = require('mongodb');
