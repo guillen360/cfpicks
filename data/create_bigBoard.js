@@ -8,7 +8,7 @@ var Games;
 var Users;
 var Picks;
 
-var printSomething = function(results){
+var sucessMsg = function(results){
     console.log('stored successfully');
 }
 
@@ -42,25 +42,25 @@ var saveBigBoard = function(){
             'game': Games[g],
             'users': users
         }
-        storeBigBoardCollection(queryDoc, updateDoc, 'bigboard', printSomething)
+        storeBigBoardCollection(queryDoc, updateDoc, 'bigboard', sucessMsg)
     }
 }
 
-var callbackPicks = function(results){
-    Picks = results;
+var callbackPicks = function(picks){
+    Picks = picks;
 
     saveBigBoard();
 }
 
-var callbackUsers = function(results){
-    Users = results;
+var callbackUsers = function(users){
+    Users = users;
 
     findAllByCollection({}, 'picks', callbackPicks);
 }
 
 // get all users
-var callbackGames = function(results){
-    Games = results;
+var callbackGames = function(games){
+    Games = games;
 
     findAllByCollection({}, 'users', callbackUsers);
 }

@@ -13,7 +13,7 @@ var updatePicks = function(game, pick){
             "team_id": pick['team_id']
         }
 
-        if (pick['game_id'] == game['spread_winning_team_id']){
+        if (pick['team_id'] == game['spread_winning_team_id']){
             isCorrectHold = true;
         } else {
             isCorrectHold = false;

@@ -127,6 +127,7 @@ exports.mypicks = function (req, res) {
 
 exports.updateMyPicks = function (req, res){
     var updatePick = require('../server').findOrCreateByCollection;
+    var update_bigBoard_game = require('../data/update_bigBoard_game').update_BB_game;
 
     sendResp = function(results){
         if (results){
@@ -149,7 +150,7 @@ exports.updateMyPicks = function (req, res){
     updateDoc["isCorrect"] = null;
 
 //    updatePick(queryDoc, updateDoc, "picks", sendResp);
-    updatePick(queryDoc, updateDoc, "picks", null);
+    updatePick(queryDoc, updateDoc, "picks", update_bigBoard_game);
     res.json(updateDoc);
 }
 
