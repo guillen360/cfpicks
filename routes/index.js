@@ -16,7 +16,8 @@ exports.bigboard = function (req, res) {
     var getActiveWeek = require('../server').findOneByCollection;
 
     var sendBigBoard = function(results){
-        res.render('partials/bigboard', results);
+        console.log(results)
+        res.render('partials/bigboard', {'bigboard': results});
     }
 
     var getBigBoard = function(result){
@@ -27,6 +28,24 @@ exports.bigboard = function (req, res) {
     } else {
         getActiveWeek({"active": true}, 'weeks', getBigBoard)
     }
+
+}
+
+exports.finishedbigboard = function (req, res) {
+    mongourl = require('../server').mongourl;
+    mongo = require('mongodb');
+    var bigBoardCollection = require('../server').findAllByCollection;
+    var getActiveWeek = require('../server').findOneByCollection;
+
+    var sendBigBoard = function(results){
+        console.log(results)
+        res.render('partials/finishedbigboard', {'bigboard': results});
+    }
+
+    var getBigBoard = function(result){
+        bigBoardCollection({'week_id': result['id']}, 'bigboard', sendBigBoard);
+    }
+    getBigBoard({'id': req.query.week_id})
 
 }
 

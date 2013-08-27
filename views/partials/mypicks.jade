@@ -1,12 +1,18 @@
-h2 make your picks...
+h2 Make Your Picks...
 
 div.accordion#accordion
     - for (var x = 1; x <= 15; x++) {
         div.accordion-group
             div.accordion-heading
-                a(data-toggle="collapse", data-parent="#accordion", href="#collapse_#{weeks[x]['id']}").accordion-toggle.week_link
-                    | Week #{weeks[x]['id']}
-                    input(type="hidden", name="week_num", class="week_num", value="#{weeks[x]['id']}")
+                - if(weeks[x]['active']){
+                    a(data-toggle="collapse", data-parent="#accordion", href="#collapse_#{weeks[x]['id']}").accordion-toggle
+                        | Week #{weeks[x]['id']} - Active
+                        input(type="hidden", name="week_num", class="week_num", value="#{weeks[x]['id']}")
+                - } else{
+                    a(data-toggle="collapse", data-parent="#accordion", href="#collapse_#{weeks[x]['id']}").accordion-toggle.week_link
+                        | Week #{weeks[x]['id']}
+                        input(type="hidden", name="week_num", class="week_num", value="#{weeks[x]['id']}")
+                - } 
             - if(weeks[x]['active']){
                 div(id="collapse_#{weeks[x]['id']}").accordion-body.collapse.in
                     div.accordion-inner

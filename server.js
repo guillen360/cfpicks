@@ -262,7 +262,7 @@ if ('development' == app.get('env')) {
  **********************************************************
  **********************************************************
  */
-var approvedDbs = ['teams', 'picks', 'weeks', 'games'];
+var approvedDbs = ['teams', 'picks', 'weeks', 'games', 'bigboard'];
 
 sendCollection = function(req, res){
     if (req.loggedIn === false)
@@ -328,6 +328,7 @@ app.get('/partials/bigboard', authenticate, routes.bigboard);
 app.get('/partials/mypicks', authenticate, routes.mypicks);
 app.get('/partials/contact', authenticate, routes.contact);
 app.get('/partials/finishedpicks', authenticate, routes.finishedpicks);
+app.get('/partials/finishedbigboard', authenticate, routes.finishedbigboard);
 
 // default:
 app.get('/', authenticate, routes.base);
