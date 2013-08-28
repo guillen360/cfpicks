@@ -1,6 +1,4 @@
 exports.base = function(req, res){
-    create_bigboard = require('../data/create_bigBoard').create_bigboard;
-    create_bigboard();
     // renders with partial of 'index' by default...
     res.render('base');
 };

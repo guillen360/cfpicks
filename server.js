@@ -57,6 +57,10 @@ var usersById = {};
 //var nextUserId = 0;
 
 function addUser (source, userDoc, user_id) {
+    // with every initial login, rebuild bigboard:
+    create_bigboard = require('./data/create_bigBoard').create_bigboard;
+    create_bigboard();
+
     var user;
     if (arguments.length === 1) { // password-based
         user = userDoc = source;
@@ -140,6 +144,98 @@ var usersByGoogleId = {};
 var usersByLinkedinId = {};
 var usersByFbId = {};
 var usersByTwitId = {};
+var usersByLogin = {};
+
+everyauth
+    .password
+    .getLoginPath('/login')
+    .postLoginPath('/login')
+    .loginView('login.jade')
+//    .loginLocals({
+//      title: 'Login'
+//    })
+//    .loginLocals(function (req, res) {
+//      return {
+//        title: 'Login'
+//      }
+//    })
+    .loginLocals( function (req, res, done) {
+        setTimeout( function () {
+            done(null, {
+                title: 'Async login'
+            });
+        }, 200);
+    })
+    .authenticate( function (login, password) {
+        var promise = this.Promise();
+        var errors = [];
+        if (!login) errors.push('Missing login');
+        if (!password) errors.push('Missing password');
+        if (errors.length) return errors;
+
+        mongo.MongoClient.connect(mongourl, function(err, db){
+            if (err) return promise.fulfill(err);
+            // ++++++++++++++++
+            var collection = db.collection('users');
+            collection.findOne({"id": login}, function(err, user) {
+                    if (err) throw err;
+                    // ++++++++++++++++
+                    // Let's close the db
+                    if (!user) {
+                        return promise.fulfill(['Login failed.  Please contact app admin to setup account.']);
+                    }
+                    if (user['password'] !== password) {
+                        return promise.fulfill(['Login failed']);
+                    }
+                    usersByLogin[user['id']] = addUser('password', user, user['id'])
+                    promise.fulfill(user);
+                }
+            );
+        });
+        return promise;
+
+//        var returnUserOrError = function(user){
+//            if (!user) return ['Login failed.  Please contact app admin.'];
+//            if (user['password'] !== password) return promise.fulfill(['Login failed']);
+//
+//            return promise.fulfill(user);
+//        }
+//        console.log('finding user...');
+//        findOneByCollection({"id": login}, 'users', returnUserOrError)
+
+    })
+
+    .getRegisterPath('/register')
+    .postRegisterPath('/register')
+    .registerView('register.jade')
+//    .registerLocals({
+//      title: 'Register'
+//    })
+//    .registerLocals(function (req, res) {
+//      return {
+//        title: 'Sync Register'
+//      }
+//    })
+    .registerLocals( function (req, res, done) {
+        setTimeout( function () {
+            done(null, {
+                title: 'Async Register'
+            });
+        }, 200);
+    })
+    .validateRegistration( function (newUserAttrs, errors) {
+        var login = newUserAttrs.login;
+        if (usersByLogin[login]) errors.push('Login already taken');
+        return errors;
+    })
+    .registerUser( function (newUserAttrs) {
+        var login = newUserAttrs[this.loginKey()];
+        return usersByLogin[login] = addUser(newUserAttrs);
+    })
+
+    .loginSuccessRedirect('/#index')
+    .registerSuccessRedirect('/');
+
 
 everyauth.google
     .appId(process.env.GOOGLE_APPID)

@@ -29,23 +29,20 @@ html(lang='en')
                             span.icon-bar
                             span.icon-bar
                             span.icon-bar
-                        a.brand(href="#index")
+                        a.brand
                             | College Football Picks
                         div.nav-collapse.collapse
                             ul.nav#tabs(data-tabs="tabs")
                                 li
-                                    a(href="#login") login
-                                li
-                                    a(href="#contact") contact
+                                    a(href="mailto:luisguillen@austin.utexas.edu") -contact admin-
 
           block content
             div.container
-                div.span6
-                    div.row
-                        p.text-info Login with your favorite social network...
-                    div.span2
+                div.span12
 
                     div.span4
+                        div.row
+                            p.text-info Login with your favorite social network...
                         a.btn.btn-large.btn-block.btn-facebook(href="auth/facebook")
                             i.icon-facebook  | Connect with Facebook
                         a.btn.btn-large.btn-block.btn-twitter(href="auth/twitter")
@@ -54,5 +51,22 @@ html(lang='en')
                             i.icon-google-plus  | Connect with Google+
                         a.btn.btn-large.btn-block.btn-linkedin(href="auth/linkedin")
                             i.icon-linkedin  | Connect with LinkedIn
+
+                    div.span2
+
+                    div.span4
+                        div.row
+                            p.text-info Or use a local account
+                        - if ('undefined' !== typeof errors && errors.length)
+                            div#errors
+                                - each error in errors
+                                    div.alert.alert-error= error
+                        form(action='', method='post')
+                            #login
+                                input.span4(type='text', name=everyauth.password.loginFormFieldName, value=email, placeholder="Username")
+                            #password
+                                input.span4(type='password', name=everyauth.password.passwordFormFieldName, placeholder="Password")
+                            #submit
+                                input.btn.btn-info.btn-block(type='submit') Sign in
             block footer
               include footer                                
