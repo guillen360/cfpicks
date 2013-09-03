@@ -2,6 +2,7 @@ exports.teams = {
     "UT": {
         "id": "UT",
         "college": "Texas",
+        "current_rank": "15",
         "long_name": "University of Texas at Austin",
         "abbreviation": "UT",
         "city": "Austin",
@@ -12,6 +13,7 @@ exports.teams = {
     "TAMU" : {
         "id": "TAMU",
         "college": "Texas A&M",
+        "current_rank": "7",
         "long_name": "Texas A&M University",
         "abbreviation": "TAMU",
         "city": "long_name Station",
@@ -22,6 +24,7 @@ exports.teams = {
     "ND": {
         "id": "ND",
         "college": "Notre Dame",
+        "current_rank": "14",
         "long_name": "University of Notre Dame",
         "abbreviation": "ND",
         "city": "Notre Dame",
@@ -32,6 +35,7 @@ exports.teams = {
     "OU": {
         "id": "OU",
         "college": "Oklahoma",
+        "current_rank": "16",
         "long_name": "University of Oklahoma",
         "abbreviation": "OU",
         "city": "Norman",
@@ -42,6 +46,7 @@ exports.teams = {
     "BU": {
         "id": "BU",
         "college": "Baylor",
+        "current_rank": "23",
         "long_name": "Baylor University",
         "abbreviation": "BU",
         "city": "Waco",
@@ -52,6 +57,7 @@ exports.teams = {
     "ISU": {
         "id": "ISU",
         "college": "Iowa St",
+        "current_rank": "",
         "long_name": "Iowa State University",
         "abbreviation": "ISU",
         "city": "Ames",
@@ -62,6 +68,7 @@ exports.teams = {
     "KAN": {
         "id": "KAN",
         "college": "Kansas",
+        "current_rank": "",
         "long_name": "University of Kansas",
         "abbreviation": "KAN",
         "city": "Lawrence",
@@ -72,6 +79,7 @@ exports.teams = {
     "KSU": {
         "id": "KSU",
         "college": "Kansas St",
+        "current_rank": "",
         "long_name": "Kansas State University",
         "abbreviation": "KSU",
         "city": "Manhattan",
@@ -82,6 +90,7 @@ exports.teams = {
     "OSU": {
         "id": "OSU",
         "college": "Oklahoma St",
+        "current_rank": "",
         "long_name": "Oklahome State University",
         "abbreviation": "OSU",
         "city": "Stillwater",
@@ -92,6 +101,7 @@ exports.teams = {
     "TCU": {
         "id": "TCU",
         "college": "TCU",
+        "current_rank": "24",
         "long_name": "Texas Christian University",
         "abbreviation": "TCU",
         "city": "Fort Worth",
@@ -102,6 +112,7 @@ exports.teams = {
     "TECH": {
         "id": "TECH",
         "college": "Texas Tech",
+        "current_rank": "",
         "long_name": "Texas Tech University",
         "abbreviation": "TECH",
         "city": "Lubbock",
@@ -112,6 +123,7 @@ exports.teams = {
     "WVU": {
         "id": "WVU",
         "college" : "West Virginia",
+        "current_rank": "",
         "long_name": "West Virginia University",
         "abbreviation": "WVU",
         "city": "West Morgantown",
@@ -122,6 +134,7 @@ exports.teams = {
     "NMSU" : {
         "id": "NMSU",
         "college" : "New Mexico St",
+        "current_rank": "",
         "long_name": "New Mexico State University",
         "abbreviation": "NMSU",
         "city": "Las Cruces",
@@ -132,6 +145,7 @@ exports.teams = {
     "BYU" : {
         "id": "BYU",
         "college" : "BYU",
+        "current_rank": "",
         "long_name": "Brightam Young University",
         "abbreviation": "BYU",
         "city": "Salt Lake City",
@@ -142,6 +156,7 @@ exports.teams = {
     "OLEMISS": {
         "id": "OLEMISS",
         "college" : "Ole Miss",
+        "current_rank": "",
         "long_name": "University of Mississippi",
         "abbreviation": "OLEMISS",
         "city": "Oxford",
@@ -153,6 +168,7 @@ exports.teams = {
     "RICE": {
         "id": "RICE",
         "college" : "Rice",
+        "current_rank": "",
         "long_name": "Rice University",
         "abbreviation": "RICE",
         "city": "Houston",
@@ -163,6 +179,7 @@ exports.teams = {
     "SHOUSTONST": {
         "id": "SHOUSTONST",
         "college" : "Sam Houston St",
+        "current_rank": "",
         "long_name": "Sam Houston State University",
         "abbreviation": "SHOUSTONST",
         "city": "Huntsville",
@@ -173,6 +190,7 @@ exports.teams = {
     "ULM": {
         "id": "ULM",
         "college" : "Louisiana-Monroe",
+        "current_rank": "",
         "long_name": "University of Louisiana at Monroe",
         "abbreviation": "ULM",
         "city": "Monroe",
@@ -183,6 +201,7 @@ exports.teams = {
     "ALA": {
         "id": "ALA",
         "college" : "Alabama",
+        "current_rank": "1",
         "long_name": "Alabama University",
         "abbreviation": "ALA",
         "city": "Tuscaloosa",
@@ -193,6 +212,7 @@ exports.teams = {
     "VTECH": {
         "id": "VTECH",
         "college" : "Virginia Tech",
+        "current_rank": "",
         "long_name": "Virginia Tech University",
         "abbreviation": "VTECH",
         "city": "Blacksburg",
@@ -203,6 +223,7 @@ exports.teams = {
     "SMU": {
         "id": "SMU",
         "college" : "SMU",
+        "current_rank": "",
         "long_name": "Southern Methodist University",
         "abbreviation": "SMU",
         "city": "Universitiy Park",
@@ -213,6 +234,7 @@ exports.teams = {
     "NAU": {
         "id": "NAU",
         "college" : "Northern Arizona",
+        "current_rank": "",
         "long_name": "Northern Arizona University",
         "abbreviation": "NAU",
         "city": "Flagstaff",
@@ -223,6 +245,7 @@ exports.teams = {
     "AZ": {
         "id": "AZ",
         "college" : "Arizona",
+        "current_rank": "",
         "long_name": "University of Arizona",
         "abbreviation": "AZ",
         "city": "Tucson",
@@ -233,6 +256,7 @@ exports.teams = {
     "TEMPL": {
         "id": "TEMPL",
         "college" : "Temple",
+        "current_rank": "",
         "long_name": "Temple University",
         "abbreviation": "TEMPL",
         "city": "Philadelphia",
@@ -243,6 +267,7 @@ exports.teams = {
     "UGA": {
         "id": "UGA",
         "college" : "Georgia",
+        "current_rank": "11",
         "long_name": "University of Georgia",
         "abbreviation": "UGA",
         "city": "Athens",
@@ -253,6 +278,7 @@ exports.teams = {
     "CLEM": {
         "id": "CLEM",
         "college" : "Clemson",
+        "current_rank": "4",
         "long_name": "Clemson University",
         "abbreviation": "CLEM",
         "city": "Clemson",
@@ -263,6 +289,7 @@ exports.teams = {
     "LSU": {
         "id": "LSU",
         "college" : "LSU",
+        "current_rank": "9",
         "long_name": "Louisiana State University",
         "abbreviation": "LSU",
         "city": "Baton Rouge",
@@ -273,6 +300,7 @@ exports.teams = {
     "TSU": {
         "id": "TSU",
         "college" : "Texas State",
+        "current_rank": "",
         "long_name": "Texas State University",
         "abbreviation": "TSU",
         "city": "San Marcos",
@@ -283,11 +311,122 @@ exports.teams = {
     "SOMISS": {
         "id": "SOMISS",
         "college" : "Southern Miss",
+        "current_rank": "",
         "long_name": "University of Southern Mississippi",
         "abbreviation": "SOMISS",
         "city": "Hattiesburg",
         "state": "MS",
         "nickname": "Golden Eagles",
         "logo": "golden_eagles.jpg"
+    },
+    "UO": {
+        "id": "UO",
+        "college" : "Oregon",
+        "current_rank": "2",
+        "long_name": "University of Oregon",
+        "abbreviation": "UO",
+        "city": "Eugene",
+        "state": "OR",
+        "nickname": "Oregon Ducks",
+        "logo": "ducks.jpg"
+    },
+    "UVA": {
+        "id": "UVA",
+        "college" : "Virginia",
+        "current_rank": "",
+        "long_name": "University of Virginia",
+        "abbreviation": "UVA",
+        "city": "Charlottesville",
+        "state": "VA",
+        "nickname": "Cavaliers",
+        "logo": "cavaliers.jpg"
+    },
+    "USCAR": {
+        "id": "USCAR",
+        "college" : "South Carolina",
+        "current_rank": "6",
+        "long_name": "University of South Carolina",
+        "abbreviation": "USCAR",
+        "city": "Columbia",
+        "state": "SC",
+        "nickname": "Gamecocks",
+        "logo": "gamecocks.jpg"
+    },
+    "UFL": {
+        "id": "UFL",
+        "college" : "Florida",
+        "current_rank": "12",
+        "long_name": "University of Florida",
+        "abbreviation": "UFL",
+        "city": "Gainesville",
+        "state": "FL",
+        "nickname": "Gators",
+        "logo": "gators.jpg"
+    },
+    "MIA": {
+        "id": "MIA",
+        "college" : "Miami",
+        "current_rank": "",
+        "long_name": "Miami University",
+        "abbreviation": "MIA",
+        "city": "Miami",
+        "state": "FL",
+        "nickname": "Hurricanes",
+        "logo": "hurricanes.jpg"
+    },
+    "MICH": {
+        "id": "MICH",
+        "college" : "Michigan",
+        "current_rank": "17",
+        "long_name": "University of Michigan",
+        "abbreviation": "MICH",
+        "city": "Ann Arbor",
+        "state": "MI",
+        "nickname": "Wolverines",
+        "logo": "wolverines.jpg"
+    },
+    "USC": {
+        "id": "USC",
+        "college" : "USC",
+        "current_rank": "25",
+        "long_name": "University of Southern California",
+        "abbreviation": "USC",
+        "city": "Los Angeles",
+        "state": "CA",
+        "nickname": "Trojans",
+        "logo": "trojans.jpg"
+    },
+    "WSU": {
+        "id": "WSU",
+        "college" : "Washington St",
+        "current_rank": "",
+        "long_name": "Washington State University",
+        "abbreviation": "WSU",
+        "city": "Pullman",
+        "state": "WA",
+        "nickname": "Cougars",
+        "logo": "cougars.jpg"
+    },
+    "SELS": {
+        "id": "SELS",
+        "college" : "SE Louisiana",
+        "current_rank": "",
+        "long_name": "Southeastern Louisiana University",
+        "abbreviation": "SELS",
+        "city": "Hammond",
+        "state": "LA",
+        "nickname": "Rommie",
+        "logo": "rommie.jpg"
+    },
+    "PVAMU": {
+        "id": "PVAMU",
+        "college" : "Prairie View A&M",
+        "current_rank": "",
+        "long_name": "Prairie View A&M University",
+        "abbreviation": "PVAMU",
+        "city": "Prarie View",
+        "state": "TX",
+        "nickname": "Panthers",
+        "logo": "panthers.jpg"
     }
 };

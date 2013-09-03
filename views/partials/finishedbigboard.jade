@@ -3,6 +3,7 @@
         thead
             tr
                 th Game
+                th Spread
                 - for (id in bigboard[0].users){
                     th
                         | #{bigboard[0].users[id].name}
@@ -11,19 +12,31 @@
             - for (index in bigboard){
                 tr
                     td 
-                        - if(bigboard[index].game.wasSpreadCovered){ 
-                            | #{bigboard[index].game.away_team.college}(L) at #{bigboard[index].game.home_team.college}(W)
-                        - }else{
-                            | #{bigboard[index].game.away_team.college}(W) at #{bigboard[index].game.home_team.college}(L)
+                        - if(bigboard[index].game.away_team.id == bigboard[index].game.spread_winning_team_id){
+                            span.text-success #{bigboard[index].game.away_team.college}-#{bigboard[index].game.away_team_score}
+                            |  at #{bigboard[index].game.home_team.college}-#{bigboard[index].game.home_team_score}
+                        - }else if (bigboard[index].game.home_team.id == bigboard[index].game.spread_winning_team_id){
+                            | #{bigboard[index].game.away_team.college}-#{bigboard[index].game.away_team_score}  at
+                            span.text-success  #{bigboard[index].game.home_team.college}-#{bigboard[index].game.home_team_score}
+                        - } else {
+                            | #{bigboard[index].game.away_team.college} at #{bigboard[index].game.home_team.college}
+                        - }
+                    td
+                        - if (bigboard[index].game.spread >= 0){
+                            | #{bigboard[index].game.home_team.college} by #{bigboard[index].game.spread}
+                        - } else {
+                            | #{bigboard[index].game.away_team.college} by #{String(bigboard[index].game.spread).substring(1,3)}
                         - }
                     - for (id in bigboard[0].users){
                         td 
                             - if( bigboard[index].users[id].isCorrect == null){
                                 | No Pick
+                            - } else if ((!bigboard[index].users[id].isCorrect) && (bigboard[index].game.spread_winning_team_id == "UT")){
+                                span.text-error  You FAIL
                             - }else if (!bigboard[index].users[id].isCorrect){
-                                | Incorrect
+                                span.text-error  Incorrect
                             - }else if(bigboard[index].users[id].isCorrect){
-                                | Correct
+                                span.text-success  Correct
                             - }
                     - }
             - }
