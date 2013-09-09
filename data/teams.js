@@ -13,7 +13,7 @@ exports.teams = {
     "TAMU" : {
         "id": "TAMU",
         "college": "Texas A&M",
-        "current_rank": "7",
+        "current_rank": "6",
         "long_name": "Texas A&M University",
         "abbreviation": "TAMU",
         "city": "long_name Station",
@@ -35,7 +35,7 @@ exports.teams = {
     "OU": {
         "id": "OU",
         "college": "Oklahoma",
-        "current_rank": "16",
+        "current_rank": "14",
         "long_name": "University of Oklahoma",
         "abbreviation": "OU",
         "city": "Norman",
@@ -428,5 +428,115 @@ exports.teams = {
         "state": "TX",
         "nickname": "Panthers",
         "logo": "panthers.jpg"
+    },
+    "UCLA": {
+        "id": "UCLA",
+        "college" : "UCLA",
+        "current_rank": "16",
+        "long_name": "University of California in Los Angeles",
+        "abbreviation": "UCLA",
+        "city": "Los Angeles",
+        "state": "CA",
+        "nickname": "Bruins",
+        "logo": "bruins.jpg"
+    },
+    "NEB": {
+        "id": "NEB",
+        "college" : "Nebraska",
+        "current_rank": "23",
+        "long_name": "University of Nebraska",
+        "abbreviation": "NEB",
+        "city": "",
+        "state": "",
+        "nickname": "",
+        "logo": ""
+    },
+    "ASU": {
+        "id": "ASU",
+        "college" : "Arizona St",
+        "current_rank": "",
+        "long_name": "Arizona State University",
+        "abbreviation": "ASU",
+        "city": "Tempe",
+        "state": "AZ",
+        "nickname": "Sun Devils",
+        "logo": "sundevils.jpg"
+    },
+    "WISC": {
+        "id": "WISC",
+        "college" : "Wisconsin",
+        "current_rank": "20",
+        "long_name": "Wisconsin University",
+        "abbreviation": "WISC",
+        "city": "",
+        "state": "",
+        "nickname": "",
+        "logo": ""
+    },
+    "PURD": {
+        "id": "PURD",
+        "college" : "Purdue",
+        "current_rank": "",
+        "long_name": "Purdue University",
+        "abbreviation": "PURD",
+        "city": "",
+        "state": "",
+        "nickname": "",
+        "logo": ""
+    },
+    "LAM": {
+        "id": "LAM",
+        "college" : "Lamar",
+        "current_rank": "",
+        "long_name": "Lamar University",
+        "abbreviation": "LAM",
+        "city": "",
+        "state": "",
+        "nickname": "",
+        "logo": ""
+    },
+    "OHS": {
+        "id": "OHS",
+        "college" : "Ohio St",
+        "current_rank": "4",
+        "long_name": "Ohio State University",
+        "abbreviation": "OHS",
+        "city": "",
+        "state": "",
+        "nickname": "",
+        "logo": ""
+    },
+    "CAL": {
+        "id": "CAL",
+        "college" : "California",
+        "current_rank": "",
+        "long_name": "University of California",
+        "abbreviation": "CAL",
+        "city": "",
+        "state": "",
+        "nickname": "",
+        "logo": ""
+    },
+    "TEN": {
+        "id": "TEN",
+        "college" : "Tennessee",
+        "current_rank": "",
+        "long_name": "University of Tennessee",
+        "abbreviation": "TEN",
+        "city": "",
+        "state": "",
+        "nickname": "",
+        "logo": ""
+    },
+    "TUL": {
+        "id": "TUL",
+        "college" : "Tulsa",
+        "current_rank": "",
+        "long_name": "University of Tulsa",
+        "abbreviation": "TUL",
+        "city": "",
+        "state": "",
+        "nickname": "",
+        "logo": ""
     }
 };

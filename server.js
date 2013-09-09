@@ -58,8 +58,8 @@ var usersById = {};
 
 function addUser (source, userDoc, user_id) {
     // with every initial login, rebuild bigboard:
-    create_bigboard = require('./data/create_bigBoard').create_bigboard;
-    create_bigboard();
+//    create_bigboard = require('./data/create_bigBoard').create_bigboard;
+//    create_bigboard();
 
     var user;
     if (arguments.length === 1) { // password-based

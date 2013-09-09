@@ -150,10 +150,10 @@ exports.games = [
         "away_team": teams.UT,
         "game_date": new Date('Sept 7, 2013'),
         "spread": -7,
-        "wasSpreadCovered": null,
-        "spread_winning_team_id": null,
-        "home_team_score": null,
-        "away_team_score": null
+        "wasSpreadCovered": false,
+        "spread_winning_team_id": teams.BYU.id,
+        "home_team_score": 40,
+        "away_team_score": 21
     },
     {
         "id": "W02G02",
@@ -164,10 +164,10 @@ exports.games = [
         "away_team": teams.SHOUSTONST,
         "game_date": new Date('Sept 7, 2013'),
         "spread": 48,
-        "wasSpreadCovered": null,
-        "spread_winning_team_id": null,
-        "home_team_score": null,
-        "away_team_score": null
+        "wasSpreadCovered": false,
+        "spread_winning_team_id": teams.SHOUSTONST.id,
+        "home_team_score": 28,
+        "away_team_score": 65
     },
     {
         "id": "W02G03",
@@ -178,10 +178,10 @@ exports.games = [
         "away_team": teams.UO,
         "game_date": new Date('Sept 7, 2013'),
         "spread": -22,
-        "wasSpreadCovered": null,
-        "spread_winning_team_id": null,
-        "home_team_score": null,
-        "away_team_score": null
+        "wasSpreadCovered": true,
+        "spread_winning_team_id": teams.UO.id,
+        "home_team_score": 10,
+        "away_team_score": 59
     },
     {
         "id": "W02G04",
@@ -192,10 +192,10 @@ exports.games = [
         "away_team": teams.USCAR,
         "game_date": new Date('Sept 7, 2013'),
         "spread": 3,
-        "wasSpreadCovered": null,
-        "spread_winning_team_id": null,
-        "home_team_score": null,
-        "away_team_score": null
+        "wasSpreadCovered": true,
+        "spread_winning_team_id": teams.UGA.id,
+        "home_team_score": 41,
+        "away_team_score": 30
     },
     {
         "id": "W02G05",
@@ -206,10 +206,10 @@ exports.games = [
         "away_team": teams.UFL,
         "game_date": new Date('Sept 7, 2013'),
         "spread": -3,
-        "wasSpreadCovered": null,
-        "spread_winning_team_id": null,
-        "home_team_score": null,
-        "away_team_score": null
+        "wasSpreadCovered": false,
+        "spread_winning_team_id": teams.MIA.id,
+        "home_team_score": 16,
+        "away_team_score": 21
     },
     {
         "id": "W02G06",
@@ -220,10 +220,10 @@ exports.games = [
         "away_team": teams.ND,
         "game_date": new Date('Sept 7, 2013'),
         "spread": 4,
-        "wasSpreadCovered": null,
-        "spread_winning_team_id": null,
-        "home_team_score": null,
-        "away_team_score": null
+        "wasSpreadCovered": true,
+        "spread_winning_team_id": teams.MICH.id,
+        "home_team_score": 41,
+        "away_team_score": 30
     },
     {
         "id": "W02G07",
@@ -234,10 +234,10 @@ exports.games = [
         "away_team": teams.WVU,
         "game_date": new Date('Sept 7, 2013'),
         "spread": 21,
-        "wasSpreadCovered": null,
-        "spread_winning_team_id": null,
-        "home_team_score": null,
-        "away_team_score": null
+        "wasSpreadCovered": false,
+        "spread_winning_team_id": teams.WVU.id,
+        "home_team_score": 16,
+        "away_team_score": 7
     },
     {
         "id": "W02G08",
@@ -248,10 +248,10 @@ exports.games = [
         "away_team": teams.WSU,
         "game_date": new Date('Sept 7, 2013'),
         "spread": 15,
-        "wasSpreadCovered": null,
-        "spread_winning_team_id": null,
-        "home_team_score": null,
-        "away_team_score": null
+        "wasSpreadCovered": false,
+        "spread_winning_team_id": teams.WSU.id,
+        "home_team_score": 7,
+        "away_team_score": 10
     },
     {
         "id": "W02G09",
@@ -262,10 +262,10 @@ exports.games = [
         "away_team": teams.SELS,
         "game_date": new Date('Sept 7, 2013'),
         "spread": 44,
-        "wasSpreadCovered": null,
-        "spread_winning_team_id": null,
-        "home_team_score": null,
-        "away_team_score": null
+        "wasSpreadCovered": false,
+        "spread_winning_team_id": teams.SELS.id,
+        "home_team_score": 38,
+        "away_team_score": 17
     },
     {
         "id": "W02G10",
@@ -276,10 +276,155 @@ exports.games = [
         "away_team": teams.PVAMU,
         "game_date": new Date('Sept 7, 2013'),
         "spread": 30,
+        "wasSpreadCovered": false,
+        "spread_winning_team_id": teams.PVAMU.id,
+        "home_team_score": 28,
+        "away_team_score": 3
+    },
+//
+//    WEEK 3
+//
+    {
+        "id": "W03G01",
+        "week_id": "3",
+        "away_team_id": teams.OLEMISS.id,
+        "away_team": teams.OLEMISS,
+        "home_team_id": teams.UT.id,
+        "home_team": teams.UT,
+        "game_date": new Date('Sept 14, 2013'),
+        "spread": 3,
         "wasSpreadCovered": null,
         "spread_winning_team_id": null,
-        "home_team_score": null,
-        "away_team_score": null
+        "away_team_score": null,
+        "home_team_score": null
+
+    },
+    {
+        "id": "W03G02",
+        "week_id": "3",
+        "away_team_id": teams.TCU.id,
+        "away_team": teams.TCU,
+        "home_team_id": teams.TECH.id,
+        "home_team": teams.TECH,
+        "game_date": new Date('Sept 12, 2013'),
+        "spread": -3,
+        "wasSpreadCovered": null,
+        "spread_winning_team_id": null,
+        "away_team_score": null,
+        "home_team_score": null
+
+    },
+    {
+        "id": "W03G03",
+        "week_id": "3",
+        "away_team_id": teams.TUL.id,
+        "away_team": teams.TUL,
+        "home_team_id": teams.OU.id,
+        "home_team": teams.OU,
+        "game_date": new Date('Sept 14, 2013'),
+        "spread": 24,
+        "wasSpreadCovered": null,
+        "spread_winning_team_id": null,
+        "away_team_score": null,
+        "home_team_score": null
+    },
+    {
+        "id": "W03G04",
+        "week_id": "3",
+        "away_team_id": teams.ALA.id,
+        "away_team": teams.ALA,
+        "home_team_id": teams.TAMU.id,
+        "home_team": teams.TAMU,
+        "game_date": new Date('Sept 14, 2013'),
+        "spread": -8,
+        "wasSpreadCovered": null,
+        "spread_winning_team_id": null,
+        "away_team_score": null,
+        "home_team_score": null
+    },
+    {
+        "id": "W03G05",
+        "week_id": "3",
+        "away_team_id": teams.TEN.id,
+        "away_team": teams.TEN,
+        "home_team_id": teams.OU.id,
+        "home_team": teams.OU,
+        "game_date": new Date('Sept 14, 2013'),
+        "spread": 27,
+        "wasSpreadCovered": null,
+        "spread_winning_team_id": null,
+        "away_team_score": null,
+        "home_team_score": null
+    },
+    {
+        "id": "W03G06",
+        "week_id": "3",
+        "away_team_id": teams.OHS.id,
+        "away_team": teams.OHS,
+        "home_team_id": teams.CAL.id,
+        "home_team": teams.CAL,
+        "game_date": new Date('Sept 14, 2013'),
+        "spread": 0,
+        "wasSpreadCovered": null,
+        "spread_winning_team_id": null,
+        "away_team_score": null,
+        "home_team_score": null
+    },
+    {
+        "id": "W03G07",
+        "week_id": "3",
+        "away_team_id": teams.LAM.id,
+        "away_team": teams.LAM,
+        "home_team_id": teams.OSU.id,
+        "home_team": teams.OSU,
+        "game_date": new Date('Sept 14, 2013'),
+        "spread": 47,
+        "wasSpreadCovered": null,
+        "spread_winning_team_id": null,
+        "away_team_score": null,
+        "home_team_score": null
+    },
+    {
+        "id": "W03G08",
+        "week_id": "3",
+        "away_team_id": teams.ND.id,
+        "away_team": teams.ND,
+        "home_team_id": teams.PURD.id,
+        "home_team": teams.PURD,
+        "game_date": new Date('Sept 14, 2013'),
+        "spread": -21,
+        "wasSpreadCovered": null,
+        "spread_winning_team_id": null,
+        "away_team_score": null,
+        "home_team_score": null
+    },
+    {
+        "id": "W03G09",
+        "week_id": "3",
+        "away_team_id": teams.WISC.id,
+        "away_team": teams.WISC,
+        "home_team_id": teams.ASU.id,
+        "home_team": teams.ASU,
+        "game_date": new Date('Sept 14, 2013'),
+        "spread": 6,
+        "wasSpreadCovered": null,
+        "spread_winning_team_id": null,
+        "away_team_score": null,
+        "home_team_score": null
+    },
+    {
+        "id": "W03G10",
+        "week_id": "3",
+        "away_team_id": teams.UCLA.id,
+        "away_team": teams.UCLA,
+        "home_team_id": teams.NEB.id,
+        "home_team": teams.NEB,
+        "game_date": new Date('Sept 14, 2013'),
+        "spread": 4,
+        "wasSpreadCovered": null,
+        "spread_winning_team_id": null,
+        "away_team_score": null,
+        "home_team_score": null
     }
 
 ]

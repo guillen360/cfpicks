@@ -9,13 +9,13 @@ exports.weeks = [
         "id": "2",
         "start_date": new Date("Sept 1, 2013"),
         "end_date": new Date("Sept 7, 2013"),
-        "active": true
+        "active": false
     },
     {
         "id": "3",
         "start_date": new Date("Sept 8, 2013"),
         "end_date": new Date("Sept 14, 2013"),
-        "active": false
+        "active": true
     },
     {
         "id": "4",
