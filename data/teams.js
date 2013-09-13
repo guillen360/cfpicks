@@ -2,7 +2,7 @@ exports.teams = {
     "UT": {
         "id": "UT",
         "college": "Texas",
-        "current_rank": "15",
+        "current_rank": "",
         "long_name": "University of Texas at Austin",
         "abbreviation": "UT",
         "city": "Austin",

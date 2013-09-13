@@ -26,7 +26,7 @@ var updatePicks = function(game, pick){
             "isCorrect": isCorrectHold
         }
         updatePicksCollection(pickQueryDoc, pickUpdateDoc, 'picks', function(results){console.log('update!')})
-        console.log(game);
+        console.log('result logged');
     } else {
         console.log('no result logged in yet');
     }
@@ -52,8 +52,6 @@ var getGameResult = function(searchDoc, pick, callbackFunc) {
 
 var getGame = function(resultsAllPicks){
     for (var i = 0; i < resultsAllPicks.length; i++){
-        console.log(resultsAllPicks[i]['game_id']);
-        console.log(resultsAllPicks[i]['user_id']);
         getGameResult({"id": resultsAllPicks[i]['game_id']}, resultsAllPicks[i], updatePicks)
     }
 }

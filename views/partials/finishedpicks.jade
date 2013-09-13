@@ -6,7 +6,7 @@ ul.nostyle_list
                 span.span4
                     - if(games[i].pick_team_id == games[i].away_team_id){
                         - if (games[i].isCorrect == null) {
-                            button(disabled).span3.btn.btn-large
+                            button(disabled).span3.btn.btn-large.btn-warning
                                 i.icon-white.icon-ok
                                 | #{games[i]['away_team']['college']}
                                 - if (games[i].spread < 0){
@@ -41,7 +41,7 @@ ul.nostyle_list
                 span.span4
                      - if(games[i].pick_team_id == games[i].home_team_id){
                         - if (games[i].isCorrect == null) {
-                            button(disabled).span3.btn.btn-large
+                            button(disabled).span3.btn.btn-large.btn-warning
                                 i.icon-white.icon-ok
                                     | #{games[i]['home_team']['college']}
                                     - if (games[i].spread >= 0){

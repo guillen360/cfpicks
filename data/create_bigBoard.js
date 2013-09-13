@@ -8,9 +8,11 @@ var create_bigboard = function(){
     var Games;
     var Users;
     var Picks;
+    var bb_ctr = 0;
 
     var sucessMsg = function(results){
-        console.log('stored successfully');
+        bb_ctr++;
+        console.log('bigboard rec stored ' + bb_ctr);
     }
 
     var saveBigBoard = function(){
@@ -66,8 +68,19 @@ var create_bigboard = function(){
         findAllByCollection({}, 'users', callbackUsers);
     }
 
-    // get all games
-    findAllByCollection({}, 'games', callbackGames);
+    // drop all
+    mongo.MongoClient.connect(mongourl, function(err, db) {
+        if(err) throw err;
+
+        // drop:
+        var collection = db.collection('bigboard');
+
+        collection.drop();
+
+        // start by getting all games:
+        findAllByCollection({}, 'games', callbackGames);
+    })
+
 }
 
 exports.create_bigboard = create_bigboard;

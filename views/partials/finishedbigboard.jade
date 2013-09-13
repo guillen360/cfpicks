@@ -30,7 +30,7 @@
                     - for (id in bigboard[0].users){
                         td 
                             - if( bigboard[index].users[id].isCorrect == null){
-                                | No Pick
+                                | #{bigboard[index].users[id].pick_team_name}
                             - } else if ((!bigboard[index].users[id].isCorrect) && (bigboard[index].game.spread_winning_team_id == "UT")){
                                 span.text-error  You FAIL
                             - }else if (!bigboard[index].users[id].isCorrect){

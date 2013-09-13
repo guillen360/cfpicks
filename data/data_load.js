@@ -6,72 +6,90 @@ var format = require('util');
 
 var mongourl = require('../server').mongourl;
 
+var load_games = function(){
+    mongo.MongoClient.connect(mongourl, function(err, db) {
+        if(err) throw err;
 
-mongo.MongoClient.connect(mongourl, function(err, db) {
-    if(err) throw err;
+        // drop:
+        var collection = db.collection('games');
 
-    // drop:
-    var collection = db.collection('teams');
+        collection.drop();
 
-    collection.drop();
+        var collection = db.collection('games');
 
-    var collection = db.collection('teams');
+        // recreate data:
+        var ctr = 0;
+        for (var i = 0; i < games.length; i++){
+            collection.insert(
+                games[i],
+                function(err, docs) {
+                    if(err) throw err;
 
-    // recreate data:
-    for (var key in teams){
-        collection.insert(
-            teams[key],
-            function(err, docs) {
-                if(err) throw err;
+                    ctr++;
+                    console.log("game rec stored" + ctr);
+                }
+            );
+        }
 
-                console.log("stored rec");
-            }
-        );
-    }
-});
+        var create_bigboard = require('./create_bigBoard').create_bigboard;
+        create_bigboard();
+    });
+}
 
-mongo.MongoClient.connect(mongourl, function(err, db) {
-    if(err) throw err;
+var load_teams = function() {
+    mongo.MongoClient.connect(mongourl, function(err, db) {
+        if(err) throw err;
 
-    // drop:
-    var collection = db.collection('weeks');
+        // drop:
+        var collection = db.collection('teams');
 
-    collection.drop();
+        collection.drop();
 
-    var collection = db.collection('weeks');
+        var collection = db.collection('teams');
 
-    // recreate data:
-    for (var i = 0; i < weeks.length; i++){
-        collection.insert(
-            weeks[i],
-            function(err, docs) {
-                if(err) throw err;
+        // recreate data:
+        var ctr = 0;
+        for (var key in teams){
+            collection.insert(
+                teams[key],
+                function(err, docs) {
+                    if(err) throw err;
 
-                console.log("stored rec");
-            }
-        );
-    }
-});
+                    ctr++;
+                    console.log("team rec stored " + ctr);
+                }
+            );
+        }
+        load_games();
+    });
+}
 
-mongo.MongoClient.connect(mongourl, function(err, db) {
-    if(err) throw err;
+var load__weeks = function() {
+    mongo.MongoClient.connect(mongourl, function(err, db) {
+        if(err) throw err;
 
-    // drop:
-    var collection = db.collection('games');
+        // drop:
+        var collection = db.collection('weeks');
 
-    collection.drop();
+        collection.drop();
 
-    var collection = db.collection('games');
+        var collection = db.collection('weeks');
 
-    // recreate data:
-    for (var i = 0; i < games.length; i++){
-        collection.insert(
-            games[i],
-            function(err, docs) {
-                if(err) throw err;
+        // recreate data:
+        var ctr = 0;
+        for (var i = 0; i < weeks.length; i++){
+            collection.insert(
+                weeks[i],
+                function(err, docs) {
+                    if(err) throw err;
 
-                console.log("stored rec");
-            }
-        );
-    }
-});
+                    ctr++;
+                    console.log("week rec stored" + ctr);
+                }
+            );
+        }
+        load_teams();
+    });
+}
+
+load__weeks();
