@@ -13,7 +13,7 @@ exports.teams = {
     "TAMU" : {
         "id": "TAMU",
         "college": "Texas A&M",
-        "current_rank": "6",
+        "current_rank": "9",
         "long_name": "Texas A&M University",
         "abbreviation": "TAMU",
         "city": "long_name Station",
@@ -24,7 +24,7 @@ exports.teams = {
     "ND": {
         "id": "ND",
         "college": "Notre Dame",
-        "current_rank": "14",
+        "current_rank": "",
         "long_name": "University of Notre Dame",
         "abbreviation": "ND",
         "city": "Notre Dame",
@@ -35,7 +35,7 @@ exports.teams = {
     "OU": {
         "id": "OU",
         "college": "Oklahoma",
-        "current_rank": "14",
+        "current_rank": "12",
         "long_name": "University of Oklahoma",
         "abbreviation": "OU",
         "city": "Norman",
@@ -46,7 +46,7 @@ exports.teams = {
     "BU": {
         "id": "BU",
         "college": "Baylor",
-        "current_rank": "23",
+        "current_rank": "15",
         "long_name": "Baylor University",
         "abbreviation": "BU",
         "city": "Waco",
@@ -90,7 +90,7 @@ exports.teams = {
     "OSU": {
         "id": "OSU",
         "college": "Oklahoma St",
-        "current_rank": "",
+        "current_rank": "21",
         "long_name": "Oklahome State University",
         "abbreviation": "OSU",
         "city": "Stillwater",
@@ -101,7 +101,7 @@ exports.teams = {
     "TCU": {
         "id": "TCU",
         "college": "TCU",
-        "current_rank": "24",
+        "current_rank": "",
         "long_name": "Texas Christian University",
         "abbreviation": "TCU",
         "city": "Fort Worth",
@@ -112,7 +112,7 @@ exports.teams = {
     "TECH": {
         "id": "TECH",
         "college": "Texas Tech",
-        "current_rank": "",
+        "current_rank": "20",
         "long_name": "Texas Tech University",
         "abbreviation": "TECH",
         "city": "Lubbock",
@@ -267,7 +267,7 @@ exports.teams = {
     "UGA": {
         "id": "UGA",
         "college" : "Georgia",
-        "current_rank": "11",
+        "current_rank": "7",
         "long_name": "University of Georgia",
         "abbreviation": "UGA",
         "city": "Athens",
@@ -278,7 +278,7 @@ exports.teams = {
     "CLEM": {
         "id": "CLEM",
         "college" : "Clemson",
-        "current_rank": "4",
+        "current_rank": "3",
         "long_name": "Clemson University",
         "abbreviation": "CLEM",
         "city": "Clemson",
@@ -289,7 +289,7 @@ exports.teams = {
     "LSU": {
         "id": "LSU",
         "college" : "LSU",
-        "current_rank": "9",
+        "current_rank": "10",
         "long_name": "Louisiana State University",
         "abbreviation": "LSU",
         "city": "Baton Rouge",
@@ -344,7 +344,7 @@ exports.teams = {
     "USCAR": {
         "id": "USCAR",
         "college" : "South Carolina",
-        "current_rank": "6",
+        "current_rank": "14",
         "long_name": "University of South Carolina",
         "abbreviation": "USCAR",
         "city": "Columbia",
@@ -355,13 +355,24 @@ exports.teams = {
     "UFL": {
         "id": "UFL",
         "college" : "Florida",
-        "current_rank": "12",
+        "current_rank": "17",
         "long_name": "University of Florida",
         "abbreviation": "UFL",
         "city": "Gainesville",
         "state": "FL",
         "nickname": "Gators",
         "logo": "gators.jpg"
+    },
+    "UFLST": {
+        "id": "UFLST",
+        "college" : "Florida St",
+        "current_rank": "8",
+        "long_name": "Florida State University",
+        "abbreviation": "UFLST",
+        "city": "",
+        "state": "FL",
+        "nickname": "",
+        "logo": ""
     },
     "MIA": {
         "id": "MIA",
@@ -377,7 +388,7 @@ exports.teams = {
     "MICH": {
         "id": "MICH",
         "college" : "Michigan",
-        "current_rank": "17",
+        "current_rank": "18",
         "long_name": "University of Michigan",
         "abbreviation": "MICH",
         "city": "Ann Arbor",
@@ -432,7 +443,7 @@ exports.teams = {
     "UCLA": {
         "id": "UCLA",
         "college" : "UCLA",
-        "current_rank": "16",
+        "current_rank": "11",
         "long_name": "University of California in Los Angeles",
         "abbreviation": "UCLA",
         "city": "Los Angeles",
@@ -454,7 +465,7 @@ exports.teams = {
     "ASU": {
         "id": "ASU",
         "college" : "Arizona St",
-        "current_rank": "",
+        "current_rank": "22",
         "long_name": "Arizona State University",
         "abbreviation": "ASU",
         "city": "Tempe",
@@ -465,7 +476,7 @@ exports.teams = {
     "WISC": {
         "id": "WISC",
         "college" : "Wisconsin",
-        "current_rank": "20",
+        "current_rank": "",
         "long_name": "Wisconsin University",
         "abbreviation": "WISC",
         "city": "",
@@ -534,6 +545,160 @@ exports.teams = {
         "current_rank": "",
         "long_name": "University of Tulsa",
         "abbreviation": "TUL",
+        "city": "",
+        "state": "",
+        "nickname": "",
+        "logo": ""
+    },
+    "ARK": {
+        "id": "ARK",
+        "college" : "Arkansas",
+        "current_rank": "",
+        "long_name": "University of Arkansas",
+        "abbreviation": "ARK",
+        "city": "",
+        "state": "",
+        "nickname": "",
+        "logo": ""
+    },
+    "STAN": {
+        "id": "STAN",
+        "college" : "Stanford",
+        "current_rank": "5",
+        "long_name": "University of Stanford",
+        "abbreviation": "STAN",
+        "city": "",
+        "state": "",
+        "nickname": "",
+        "logo": ""
+    },
+    "AUB": {
+        "id": "AUB",
+        "college" : "Auburn",
+        "current_rank": "",
+        "long_name": "Auburn University",
+        "abbreviation": "AUB",
+        "city": "",
+        "state": "",
+        "nickname": "",
+        "logo": ""
+    },
+    "MICHST": {
+        "id": "MICHST",
+        "college" : "Michigan St",
+        "current_rank": "",
+        "long_name": "Michigan State University",
+        "abbreviation": "MICHST",
+        "city": "",
+        "state": "",
+        "nickname": "",
+        "logo": ""
+    },
+    "UTAH": {
+        "id": "UTAH",
+        "college" : "Utah",
+        "current_rank": "",
+        "long_name": "University of Utah",
+        "abbreviation": "UTAH",
+        "city": "",
+        "state": "",
+        "nickname": "",
+        "logo": ""
+    },
+    "MARY": {
+        "id": "MARY",
+        "college" : "Maryland",
+        "current_rank": "25",
+        "long_name": "University of Maryland",
+        "abbreviation": "MARY",
+        "city": "",
+        "state": "",
+        "nickname": "",
+        "logo": ""
+    },
+    "COLOST": {
+        "id": "COLOST",
+        "college" : "Colorado St",
+        "current_rank": "",
+        "long_name": "Colorado State University",
+        "abbreviation": "COLOST",
+        "city": "",
+        "state": "",
+        "nickname": "",
+        "logo": ""
+    },
+    "COLO": {
+        "id": "COLO",
+        "college" : "Colorado",
+        "current_rank": "",
+        "long_name": "University of Colorado",
+        "abbreviation": "COLO",
+        "city": "",
+        "state": "",
+        "nickname": "",
+        "logo": ""
+    },
+    "WAKE": {
+        "id": "WAKE",
+        "college" : "Wake Forest",
+        "current_rank": "",
+        "long_name": "Wake Forest University",
+        "abbreviation": "WAKE",
+        "city": "",
+        "state": "",
+        "nickname": "",
+        "logo": ""
+    },
+    "WASH": {
+        "id": "WASH",
+        "college" : "Washington",
+        "current_rank": "16",
+        "long_name": "University of Washington",
+        "abbreviation": "WASH",
+        "city": "",
+        "state": "WA",
+        "nickname": "",
+        "logo": ""
+    },
+    "NWEST": {
+        "id": "NWEST",
+        "college" : "Northwestern",
+        "current_rank": "19",
+        "long_name": "University of Northwestern",
+        "abbreviation": "NWEST",
+        "city": "",
+        "state": "",
+        "nickname": "",
+        "logo": ""
+    },
+    "MIZZ": {
+        "id": "MIZZ",
+        "college" : "Missouri",
+        "current_rank": "25",
+        "long_name": "University of Missouri",
+        "abbreviation": "MIZZ",
+        "city": "",
+        "state": "",
+        "nickname": "",
+        "logo": ""
+    },
+    "PENNST": {
+        "id": "PENNST",
+        "college" : "Penn St",
+        "current_rank": "",
+        "long_name": "Penn State University",
+        "abbreviation": "PENNST",
+        "city": "",
+        "state": "",
+        "nickname": "",
+        "logo": ""
+    },
+    "KEN": {
+        "id": "KEN",
+        "college" : "Kentucky",
+        "current_rank": "",
+        "long_name": "University of Kentucky",
+        "abbreviation": "KEN",
         "city": "",
         "state": "",
         "nickname": "",

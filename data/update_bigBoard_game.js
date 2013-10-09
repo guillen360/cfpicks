@@ -13,15 +13,17 @@ var update_BB_game = function(result){
     var saveBigBoardGame = function(){
 //        console.log(Pick);
 //        console.log(Game);
+//        console.log("print bigboardrec....")
 //        console.log(BigBoardRec);
 
         queryDoc = {
             'week_id': Game['week_id'],
-            "game": Game
+            "game_id": Game['id']
         }
         updateDoc = {
             'week_id': Game['week_id'],
-            "game": Game
+            "game": Game,
+            "game_id": Game['id']
         }
         var users = {};
         for (var user in BigBoardRec['users']){
@@ -60,7 +62,7 @@ var update_BB_game = function(result){
     var callbackGame = function(game){
         Game = game;
 
-        findOneByCollection({"week_id": Game['week_id'], "game": Game}, 'bigboard', callbackBigBoard)
+        findOneByCollection({"week_id": Game['week_id'], "game_id": Game['id']}, 'bigboard', callbackBigBoard)
     }
 
     Pick = result;

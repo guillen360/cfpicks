@@ -31,8 +31,9 @@ var load_games = function(){
             );
         }
 
-        var create_bigboard = require('./create_bigBoard').create_bigboard;
-        create_bigboard();
+        // create bigboard is done in python now
+//        var create_bigboard = require('./create_bigBoard').create_bigboard;
+//        create_bigboard();
     });
 }
 

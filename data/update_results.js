@@ -40,11 +40,9 @@ var getGameResult = function(searchDoc, pick, callbackFunc) {
         collection.findOne(searchDoc, function(err, result) {
                 if (err) throw err;
                 // ++++++++++++++++
-                // Let's close the db
                 if (callbackFunc){
                     callbackFunc(result, pick);
                 }
-//                db.close();
             }
         );
     });
