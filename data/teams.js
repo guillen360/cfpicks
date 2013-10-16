@@ -13,7 +13,7 @@ exports.teams = {
     "TAMU" : {
         "id": "TAMU",
         "college": "Texas A&M",
-        "current_rank": "9",
+        "current_rank": "7",
         "long_name": "Texas A&M University",
         "abbreviation": "TAMU",
         "city": "long_name Station",
@@ -35,7 +35,7 @@ exports.teams = {
     "OU": {
         "id": "OU",
         "college": "Oklahoma",
-        "current_rank": "12",
+        "current_rank": "18",
         "long_name": "University of Oklahoma",
         "abbreviation": "OU",
         "city": "Norman",
@@ -46,7 +46,7 @@ exports.teams = {
     "BU": {
         "id": "BU",
         "college": "Baylor",
-        "current_rank": "15",
+        "current_rank": "12",
         "long_name": "Baylor University",
         "abbreviation": "BU",
         "city": "Waco",
@@ -65,6 +65,17 @@ exports.teams = {
         "nickname": "Cyclones",
         "logo": "cyclones.jpg"
     },
+    "IOWA": {
+        "id": "IOWA",
+        "college": "Iowa",
+        "current_rank": "",
+        "long_name": "University of Iowa",
+        "abbreviation": "Iowa",
+        "city": "",
+        "state": "IA",
+        "nickname": "",
+        "logo": ""
+    },    
     "KAN": {
         "id": "KAN",
         "college": "Kansas",
@@ -112,7 +123,7 @@ exports.teams = {
     "TECH": {
         "id": "TECH",
         "college": "Texas Tech",
-        "current_rank": "20",
+        "current_rank": "16",
         "long_name": "Texas Tech University",
         "abbreviation": "TECH",
         "city": "Lubbock",
@@ -289,7 +300,7 @@ exports.teams = {
     "LSU": {
         "id": "LSU",
         "college" : "LSU",
-        "current_rank": "10",
+        "current_rank": "6",
         "long_name": "Louisiana State University",
         "abbreviation": "LSU",
         "city": "Baton Rouge",
@@ -355,7 +366,7 @@ exports.teams = {
     "UFL": {
         "id": "UFL",
         "college" : "Florida",
-        "current_rank": "17",
+        "current_rank": "22",
         "long_name": "University of Florida",
         "abbreviation": "UFL",
         "city": "Gainesville",
@@ -366,7 +377,7 @@ exports.teams = {
     "UFLST": {
         "id": "UFLST",
         "college" : "Florida St",
-        "current_rank": "8",
+        "current_rank": "5",
         "long_name": "Florida State University",
         "abbreviation": "UFLST",
         "city": "",
@@ -443,7 +454,7 @@ exports.teams = {
     "UCLA": {
         "id": "UCLA",
         "college" : "UCLA",
-        "current_rank": "11",
+        "current_rank": "9",
         "long_name": "University of California in Los Angeles",
         "abbreviation": "UCLA",
         "city": "Los Angeles",
@@ -465,7 +476,7 @@ exports.teams = {
     "ASU": {
         "id": "ASU",
         "college" : "Arizona St",
-        "current_rank": "22",
+        "current_rank": "",
         "long_name": "Arizona State University",
         "abbreviation": "ASU",
         "city": "Tempe",
@@ -564,7 +575,7 @@ exports.teams = {
     "STAN": {
         "id": "STAN",
         "college" : "Stanford",
-        "current_rank": "5",
+        "current_rank": "13",
         "long_name": "University of Stanford",
         "abbreviation": "STAN",
         "city": "",
@@ -575,7 +586,7 @@ exports.teams = {
     "AUB": {
         "id": "AUB",
         "college" : "Auburn",
-        "current_rank": "",
+        "current_rank": "24",
         "long_name": "Auburn University",
         "abbreviation": "AUB",
         "city": "",
@@ -652,7 +663,7 @@ exports.teams = {
     "WASH": {
         "id": "WASH",
         "college" : "Washington",
-        "current_rank": "16",
+        "current_rank": "20",
         "long_name": "University of Washington",
         "abbreviation": "WASH",
         "city": "",
@@ -674,7 +685,7 @@ exports.teams = {
     "MIZZ": {
         "id": "MIZZ",
         "college" : "Missouri",
-        "current_rank": "25",
+        "current_rank": "14",
         "long_name": "University of Missouri",
         "abbreviation": "MIZZ",
         "city": "",
